@@ -1,0 +1,910 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600&display=swap");
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --contact-black: #11181c;
+  --contact-dark: #151c20;
+
+  --contact-green: #6da878;
+  --contact-green-dark: #477653;
+  --contact-green-light: #9bc2a2;
+
+  --contact-blue: #203c67;
+
+  --contact-white: #ffffff;
+  --contact-off-white: #f5f7f5;
+
+  --contact-text: #11181c;
+  --contact-muted: #68736e;
+
+  --contact-border: rgba(17, 24, 28, 0.11);
+
+  --contact-max-width: 1380px;
+}
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.contact-page {
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  background: var(--contact-off-white);
+
+  color: var(--contact-text);
+
+  font-family: "Inter", sans-serif;
+}
+
+.contact-page * {
+  box-sizing: border-box;
+}
+
+.contact-page a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.contact-navbar {
+  position: absolute;
+  z-index: 100;
+
+  top: 0;
+  left: 0;
+
+  display: flex;
+
+  width: 100%;
+  min-height: 92px;
+
+  align-items: center;
+
+  padding: 0 clamp(24px, 5vw, 88px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  background: #151c20;
+
+  color: #ffffff;
+}
+
+
+.contact-logo-wrap {
+  display: flex;
+
+  align-items: center;
+
+  margin-right: auto;
+
+  gap: 14px;
+}
+
+
+.contact-navbar-logo {
+  width: 62px;
+  height: 62px;
+
+  object-fit: contain;
+}
+
+
+.contact-logo-name {
+  color: #ffffff;
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: 1.28rem;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+}
+
+
+.contact-logo-name span {
+  color: var(--contact-green);
+}
+
+
+/* NAV LINKS */
+
+.contact-nav-links {
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(22px, 2.6vw, 40px);
+}
+
+
+.contact-nav-links a {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 0.74rem;
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  transition: color 0.25s ease;
+}
+
+
+.contact-nav-links a:hover {
+  color: #ffffff;
+}
+
+
+/* NAV BUTTON */
+
+.contact-nav-button {
+  display: inline-flex;
+
+  min-height: 45px;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-left: clamp(22px, 3vw, 38px);
+
+  padding: 0 21px;
+
+  border: 1px solid rgba(109, 168, 120, 0.45);
+
+  background: var(--contact-green);
+
+  color: var(--contact-black);
+
+  font-size: 0.69rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.contact-hero {
+  position: relative;
+
+  display: flex;
+
+  min-height: 100vh;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  padding:
+    160px
+    clamp(24px, 7vw, 118px)
+    100px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f8faf8 0%,
+      #eef2ef 100%
+    );
+
+  isolation: isolate;
+}
+
+
+/* BACKGROUND GRID */
+
+.contact-grid {
+  position: absolute;
+  z-index: -2;
+
+  inset: 0;
+
+  opacity: 0.45;
+
+  background-image:
+    linear-gradient(
+      rgba(32, 60, 103, 0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(32, 60, 103, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 95px 95px;
+}
+
+
+/* BACKGROUND GLOW */
+
+.contact-glow {
+  position: absolute;
+  z-index: -1;
+
+  top: 15%;
+  right: -250px;
+
+  width: 650px;
+  height: 650px;
+
+  border-radius: 50%;
+
+  background: rgba(109, 168, 120, 0.14);
+
+  filter: blur(150px);
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.contact-inner {
+  display: grid;
+
+  width: min(var(--contact-max-width), 100%);
+
+  margin: 0 auto;
+
+  align-items: center;
+
+  grid-template-columns:
+    minmax(380px, 0.85fr)
+    minmax(500px, 1.15fr);
+
+  gap: clamp(70px, 9vw, 150px);
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.contact-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  margin-bottom: 28px;
+
+  color: var(--contact-green-dark);
+
+  font-size: 0.72rem;
+  font-weight: 700;
+
+  gap: 13px;
+
+  letter-spacing: 0.15em;
+
+  text-transform: uppercase;
+}
+
+
+.contact-eyebrow span {
+  width: 40px;
+  height: 2px;
+
+  background: var(--contact-green);
+}
+
+
+.contact-heading h1 {
+  margin: 0;
+
+  color: var(--contact-black);
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: clamp(5rem, 8vw, 8.5rem);
+
+  font-weight: 500;
+
+  letter-spacing: -0.055em;
+
+  line-height: 0.85;
+
+  text-transform: uppercase;
+}
+
+
+.contact-heading h1 span {
+  color: var(--contact-green);
+}
+
+
+.contact-heading p {
+  max-width: 480px;
+
+  margin: 38px 0 0;
+
+  color: var(--contact-muted);
+
+  font-size: 1rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   CONTACT DETAILS
+========================================================= */
+
+.contact-details {
+  border-top: 1px solid var(--contact-border);
+}
+
+
+.contact-item {
+  display: grid;
+
+  min-height: 155px;
+
+  align-items: center;
+
+  padding: 28px 8px;
+
+  border-bottom: 1px solid var(--contact-border);
+
+  grid-template-columns:
+    60px
+    1fr
+    50px;
+
+  gap: 24px;
+
+  transition:
+    padding 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.contact-item:hover {
+  padding-left: 22px;
+
+  background: rgba(255, 255, 255, 0.65);
+}
+
+
+.contact-item-number {
+  color: var(--contact-green);
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: 0.8rem;
+
+  letter-spacing: 0.12em;
+}
+
+
+.contact-item-content span {
+  display: block;
+
+  margin-bottom: 10px;
+
+  color: var(--contact-muted);
+
+  font-size: 0.66rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.contact-item-content h2 {
+  margin: 0;
+
+  color: var(--contact-black);
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: clamp(1.5rem, 2.5vw, 2.35rem);
+
+  font-weight: 500;
+
+  letter-spacing: -0.02em;
+
+  line-height: 1.2;
+}
+
+
+.contact-arrow {
+  display: flex;
+
+  width: 42px;
+  height: 42px;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(32, 60, 103, 0.15);
+
+  color: var(--contact-blue);
+
+  font-size: 1.1rem;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-item:hover .contact-arrow {
+  background: var(--contact-blue);
+
+  color: #ffffff;
+
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   FOOTER STRIP
+========================================================= */
+
+.contact-footer {
+  position: absolute;
+
+  right: clamp(24px, 7vw, 118px);
+  bottom: 30px;
+  left: clamp(24px, 7vw, 118px);
+
+  display: flex;
+
+  align-items: center;
+
+  color: rgba(17, 24, 28, 0.4);
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: 0.63rem;
+
+  gap: 22px;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+}
+
+
+.contact-footer div {
+  height: 1px;
+
+  flex: 1;
+
+  background: var(--contact-border);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .contact-inner {
+    grid-template-columns: 1fr;
+
+    gap: 65px;
+  }
+
+  .contact-heading h1 {
+    font-size: clamp(4.6rem, 12vw, 7rem);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE NAV
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .contact-navbar {
+    min-height: 78px;
+
+    padding: 0 20px;
+  }
+
+  .contact-navbar-logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-logo-name {
+    font-size: 1rem;
+  }
+
+  .contact-nav-links {
+    display: none;
+  }
+
+  .contact-nav-button {
+    margin-left: 15px;
+
+    padding: 0 14px;
+
+    min-height: 40px;
+
+    font-size: 0.6rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .contact-hero {
+    min-height: 100vh;
+
+    padding:
+      130px
+      22px
+      110px;
+  }
+
+  .contact-heading h1 {
+    font-size: clamp(4rem, 21vw, 5.5rem);
+  }
+
+  .contact-heading p {
+    font-size: 0.94rem;
+  }
+
+  .contact-inner {
+    gap: 55px;
+  }
+
+  .contact-item {
+    min-height: 125px;
+
+    padding: 24px 0;
+
+    grid-template-columns:
+      34px
+      1fr
+      40px;
+
+    gap: 12px;
+  }
+
+  .contact-item:hover {
+    padding-left: 8px;
+  }
+
+  .contact-item-content h2 {
+    font-size: 1.35rem;
+
+    overflow-wrap: anywhere;
+  }
+
+  .contact-arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-footer {
+    right: 22px;
+    bottom: 24px;
+    left: 22px;
+  }
+
+}
+/* =========================================================
+   FADE / REVEAL
+========================================================= */
+
+.contact-reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.contact-reveal.contact-reveal-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* Make the contact details appear slightly after the heading */
+
+.contact-details.contact-reveal {
+  transition-delay: 0.12s;
+}
+
+
+/* Footer comes in last */
+
+.contact-footer.contact-reveal {
+  transition-delay: 0.2s;
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-reveal {
+    opacity: 1;
+
+    transform: none;
+
+    transition: none;
+  }
+}
+
+/* =========================================================
+   SITE FOOTER
+========================================================= */
+
+.contact-site-footer {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    85px
+    clamp(24px, 7vw, 118px)
+    30px;
+
+  background: #151c20;
+
+  color: #ffffff;
+
+  isolation: isolate;
+}
+
+
+/* subtle grid */
+
+.contact-footer-grid {
+  position: absolute;
+  z-index: -1;
+
+  inset: 0;
+
+  opacity: 0.05;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.22) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.22) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+}
+
+
+/* wrapper */
+
+.contact-site-footer-inner {
+  width: min(var(--contact-max-width), 100%);
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   TOP
+========================================================= */
+
+.contact-footer-top {
+  display: grid;
+
+  padding-bottom: 70px;
+
+  grid-template-columns:
+    minmax(340px, 1.5fr)
+    minmax(150px, 0.5fr)
+    minmax(260px, 0.7fr);
+
+  gap: clamp(45px, 7vw, 100px);
+}
+
+
+/* BRAND */
+
+.contact-footer-logo {
+  display: inline-block;
+
+  color: #ffffff;
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 500;
+
+  letter-spacing: 0.05em;
+
+  text-transform: uppercase;
+}
+
+
+.contact-footer-logo span {
+  color: var(--contact-green);
+}
+
+
+.contact-footer-brand p {
+  max-width: 430px;
+
+  margin: 22px 0 0;
+
+  color: rgba(255, 255, 255, 0.52);
+
+  font-size: 0.88rem;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   COLUMNS
+========================================================= */
+
+.contact-footer-column {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 14px;
+}
+
+
+.contact-footer-title {
+  margin-bottom: 10px;
+
+  color: var(--contact-green-light);
+
+  font-size: 0.66rem;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+}
+
+
+.contact-footer-column a {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.62);
+
+  font-size: 0.83rem;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.contact-footer-column a:hover {
+  color: #ffffff;
+
+  transform: translateX(4px);
+}
+
+
+/* =========================================================
+   BOTTOM
+========================================================= */
+
+.contact-footer-bottom {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-top: 25px;
+
+  border-top:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  color: rgba(255, 255, 255, 0.34);
+
+  font-family: "Oswald", sans-serif;
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .contact-footer-top {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 50px;
+  }
+
+  .contact-footer-brand {
+    grid-column: 1 / -1;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .contact-site-footer {
+    padding:
+      65px
+      22px
+      25px;
+  }
+
+  .contact-footer-top {
+    grid-template-columns: 1fr;
+
+    gap: 42px;
+
+    padding-bottom: 50px;
+  }
+
+  .contact-footer-brand {
+    grid-column: auto;
+  }
+
+  .contact-footer-logo {
+    font-size: 1.8rem;
+  }
+
+  .contact-footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+}
