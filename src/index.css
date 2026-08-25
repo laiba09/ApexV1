@@ -1,10 +1,24 @@
-html,
-body,
-#root {
+html {
   width: 100%;
   min-height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
+  width: 100%;
+  min-height: 100%;
+
   margin: 0;
+  padding: 0;
+
+  overflow: visible;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+
+  overflow: visible !important;
 }

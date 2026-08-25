@@ -1,60 +1,113 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./Services.css";
 
 import apexInterchange from "./assets/round.png";
 import apexNavLogo from "./assets/apex-nav-logo.png";
 
+
 function Services() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+
+  /* =========================================================
+     REVEAL
+  ========================================================= */
+
   useEffect(() => {
     window.scrollTo(0, 0);
 
     const revealElements =
       document.querySelectorAll(".services-reveal");
 
+
     if (!("IntersectionObserver" in window)) {
       revealElements.forEach((element) => {
-        element.classList.add("services-reveal-visible");
+        element.classList.add(
+          "services-reveal-visible"
+        );
       });
 
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add(
-              "services-reveal-visible"
-            );
 
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.08,
-        rootMargin: "0px 0px -45px 0px",
-      }
-    );
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(
+                "services-reveal-visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -45px 0px",
+        }
+      );
+
 
     revealElements.forEach((element) => {
       observer.observe(element);
     });
+
 
     return () => {
       observer.disconnect();
     };
   }, []);
 
+
+  /* =========================================================
+     CLOSE MOBILE MENU WHEN DESKTOP RETURNS
+  ========================================================= */
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 850) {
+        setMenuOpen(false);
+      }
+    };
+
+
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
+
+
+    return () => {
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
+    };
+  }, []);
+
+
   return (
     <main className="services-page">
+
 
       {/* =====================================================
           NAVBAR
       ====================================================== */}
 
       <header className="services-navbar">
-        <a href="/" className="services-logo-wrap">
+
+
+        {/* LOGO */}
+
+        <a
+          href="/"
+          className="services-logo-wrap"
+        >
           <img
             src={apexNavLogo}
             alt="APEX Road Network"
@@ -66,30 +119,88 @@ function Services() {
           </span>
         </a>
 
-        <nav className="services-nav-links">
-          <a href="/">
+
+        {/* NAV LINKS */}
+
+        <nav
+          className={`services-nav-links ${
+            menuOpen
+              ? "services-nav-links-open"
+              : ""
+          }`}
+        >
+
+          <a
+            href="/"
+            onClick={() => setMenuOpen(false)}
+          >
             Home
           </a>
 
-          <a href="/about">
+          <a
+            href="/about"
+            onClick={() => setMenuOpen(false)}
+          >
             About
           </a>
 
           <a
             href="/services"
             className="active"
+            onClick={() => setMenuOpen(false)}
           >
             Services
           </a>
 
-          <a href="/projects">
+          <a
+            href="/projects"
+            onClick={() => setMenuOpen(false)}
+          >
             Projects
           </a>
+
+          <a
+            href="/contact"
+            className="services-mobile-contact-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact Us
+          </a>
+
         </nav>
 
-        <a href="/contact" className="nav-button">
+
+        {/* DESKTOP CONTACT */}
+
+        <a
+          href="/contact"
+          className="services-nav-button services-desktop-contact"
+        >
           Contact Us
         </a>
+
+
+        {/* MOBILE GRID BUTTON */}
+
+        <button
+          type="button"
+          className={`services-mobile-grid-button ${
+            menuOpen
+              ? "open"
+              : ""
+          }`}
+          onClick={() =>
+            setMenuOpen((current) => !current)
+          }
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
       </header>
 
 
@@ -100,9 +211,12 @@ function Services() {
       <section className="services-hero">
 
         <div className="services-hero-grid"></div>
+
         <div className="services-hero-glow"></div>
 
+
         <div className="services-hero-inner">
+
 
           {/* HERO COPY */}
 
@@ -112,11 +226,16 @@ function Services() {
               Traffic Engineering & Design
             </div>
 
+
             <h1>
               SERVICES
               <br />
-              <span>BUILT TO MOVE.</span>
+
+              <span>
+                BUILT TO MOVE.
+              </span>
             </h1>
+
 
             <p>
               Traffic engineering, design and temporary traffic
@@ -124,12 +243,16 @@ function Services() {
               planning and approvals through to construction and delivery.
             </p>
 
+
             <a
               href="#service-list"
               className="services-hero-button"
             >
               Explore Services
-              <span>↓</span>
+
+              <span>
+                ↓
+              </span>
             </a>
 
           </div>
@@ -143,20 +266,38 @@ function Services() {
 
               <div className="services-system-grid"></div>
 
+
               <img
                 src={apexInterchange}
                 alt="APEX traffic engineering network"
               />
 
+
               <div className="services-system-stat stat-one">
-                <small>PROJECT FLOW</small>
-                <strong>SAFE</strong>
+
+                <small>
+                  PROJECT FLOW
+                </small>
+
+                <strong>
+                  SAFE
+                </strong>
+
               </div>
 
+
               <div className="services-system-stat stat-two">
-                <small>NETWORK</small>
-                <strong>READY</strong>
+
+                <small>
+                  NETWORK
+                </small>
+
+                <strong>
+                  READY
+                </strong>
+
               </div>
+
 
               <div className="services-system-coordinate">
                 SYD / NSW / TRAFFIC NETWORK
@@ -801,7 +942,7 @@ function Services() {
                 </div>
 
                 <div className="service-icon">
-                  ↗
+                  <span className="text-arrow">↗︎</span>
                 </div>
 
               </div>
@@ -916,178 +1057,193 @@ function Services() {
 
       </section>
 
+              {/* =====================================================
+    CONTACT CTA — SAME AS HOMEPAGE
+===================================================== */}
 
-      {/* =====================================================
-          FINAL CTA
-      ====================================================== */}
+<section className="cta-section" id="contact">
+  <div className="cta-grid"></div>
+  <div className="cta-glow"></div>
 
-      <section className="services-final-cta">
+  <div className="cta-inner">
+    <div className="cta-copy">
 
-        <div className="services-final-grid"></div>
+      <div className="cta-eyebrow">
+        <span></span>
+        Start a Conversation
+      </div>
 
-        <div className="services-final-inner services-reveal">
+      <h2>
+        GOT A PROJECT?
+        <br />
+        <span>LET&apos;S TALK.</span>
+      </h2>
 
+      <p>
+        Tell us what you are working on and we will help you find the
+        right traffic engineering solution for your project.
+      </p>
 
+    </div>
 
-          <div className="services-final-copy">
-
-            <div className="services-section-eyebrow light">
-              <span></span>
-              Need Traffic Engineering Support?
-            </div>
-
-            <h2>
-              LET'S FIND THE
-              <br />
-              <span>RIGHT DIRECTION.</span>
-            </h2>
-
-            <p>
-              Tell us about your project and we’ll help
-              identify the traffic engineering, design,
-              planning or approval support suited to
-              your requirements.
-            </p>
-
-            <a href="/#contact">
-              Start A Conversation
-              <span>↗</span>
-            </a>
-
-          </div>
-
-        </div>
-
-      </section>
+    <a
+      href="/contact"
+      className="cta-button"
+    >
+      Chat to Us Now
+      <span className="text-arrow">↗︎</span>
+    </a>
+  </div>
+</section>
 
 
-      {/* =====================================================
-          FOOTER
-      ====================================================== */}
+{/* =====================================================
+    FOOTER — SAME AS HOMEPAGE
+===================================================== */}
 
-      <footer className="services-footer">
+<footer className="footer">
 
-        <div className="services-footer-inner">
+  <div className="footer-grid"></div>
 
-          <div className="services-footer-top">
+  <div className="footer-inner">
 
-            <div className="services-footer-brand">
+    <div className="footer-top">
 
-              <a href="/">
-                APEX<span>.</span>
-              </a>
+      {/* BRAND */}
 
-              <p>
-                Practical traffic engineering, design and
-                transport solutions supporting safer,
-                better-managed project delivery.
-              </p>
+      <div className="footer-brand">
 
-            </div>
+        <a
+          href="/"
+          className="footer-logo"
+        >
+          APEX ROAD NETWORK<span>.</span>
+        </a>
 
+        <p>
+          Practical traffic engineering and transport solutions designed
+          to keep projects safe, compliant and moving.
+        </p>
 
-            <div className="services-footer-column">
-
-              <h3>
-                Navigation
-              </h3>
-
-              <a href="/">
-                Home
-              </a>
-
-              <a href="/about">
-                About
-              </a>
-
-              <a href="/services">
-                Services
-              </a>
-
-              <a href="/projects">
-                Projects
-              </a>
-
-              <a href="/#contact">
-                Contact
-              </a>
-
-            </div>
+      </div>
 
 
-            <div className="services-footer-column">
+      {/* NAVIGATION */}
 
-              <h3>
-                Services
-              </h3>
+      <div className="footer-column">
 
-              <a href="#service-list">
-                Road Design
-              </a>
+        <h3>
+          Navigation
+        </h3>
 
-              <a href="#service-list">
-                Road Safety Audits
-              </a>
+        <nav className="footer-links">
 
-              <a href="#service-list">
-                Traffic Management Plans
-              </a>
+          <a href="/">
+            Home
+          </a>
 
-              <a href="#service-list">
-                Traffic Staging
-              </a>
+          <a href="/about">
+            About
+          </a>
 
-              <a href="#service-list">
-                Swept Path Analysis
-              </a>
+          <a href="/services">
+            Services
+          </a>
 
-            </div>
+          <a href="/projects">
+            Projects
+          </a>
 
+          <a href="/contact">
+            Contact
+          </a>
 
-            <div className="services-footer-column">
+        </nav>
 
-              <h3>
-                Contact
-              </h3>
-
-              <a href="mailto:info@apexroadnetwork.com.au">
-                info@apexroadnetwork.com.au
-              </a>
-
-              <p>
-                Sydney, New South Wales
-              </p>
-
-            </div>
-
-          </div>
+      </div>
 
 
-          <div className="services-footer-bottom">
+      {/* SERVICES */}
 
-            <p>
-              © {new Date().getFullYear()} APEX Road Network.
-              All rights reserved.
-            </p>
+      <div className="footer-column">
 
-            <div>
+        <h3>
+          Services
+        </h3>
 
-              <a href="#privacy">
-                Privacy Policy
-              </a>
+        <div className="footer-links">
 
-              <a href="#terms">
-                Terms
-              </a>
+          <a href="/services">
+            Traffic Management Plans
+          </a>
 
-            </div>
+          <a href="/services">
+            Traffic Control Plans
+          </a>
 
-          </div>
+          <a href="/services">
+            Road Safety Audits
+          </a>
+
+          <a href="/services">
+            Traffic Impact Assessments
+          </a>
 
         </div>
 
-      </footer>
+      </div>
 
+
+      {/* CONTACT */}
+
+      <div className="footer-column footer-contact">
+
+        <h3>
+          Contact
+        </h3>
+
+        <a href="mailto: harry@apexroadnetwork.com.au">
+          harry@apexroadnetwork.com.au
+        </a>
+
+        <a href="tel:+610499516282">
+          0499 516 282
+        </a>
+
+        <p>
+          Sydney, New South Wales
+        </p>
+
+      </div>
+
+    </div>
+
+
+    {/* FOOTER BOTTOM */}
+
+    <div className="footer-bottom">
+
+      <p>
+        © {new Date().getFullYear()} APEX Road Network. All rights reserved.
+      </p>
+
+      <div className="footer-bottom-links">
+
+        <a href="#privacy">
+          Privacy Policy
+        </a>
+
+        <a href="#terms">
+          Terms
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
     </main>
   );
 }

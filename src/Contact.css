@@ -52,9 +52,8 @@
   text-decoration: none;
 }
 
-
 /* =========================================================
-   NAVBAR
+   NAVBAR — EXACTLY MATCH PROJECTS PAGE
 ========================================================= */
 
 .contact-navbar {
@@ -73,13 +72,19 @@
 
   padding: 0 clamp(24px, 5vw, 88px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
 
-  background: #151c20;
+  background:#0d1317;
 
   color: #ffffff;
 }
 
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .contact-logo-wrap {
   display: flex;
@@ -89,26 +94,40 @@
   margin-right: auto;
 
   gap: 14px;
+
+  flex-shrink: 0;
 }
 
 
 .contact-navbar-logo {
-  width: 62px;
-  height: 62px;
+  display: block;
+
+  width: 64px;
+  height: 64px;
 
   object-fit: contain;
+
+  flex-shrink: 0;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 
 .contact-logo-name {
   color: #ffffff;
 
-  font-family: "Oswald", sans-serif;
+  font-family:
+    "Oswald",
+    sans-serif;
 
-  font-size: 1.28rem;
+  font-size: 1.35rem;
   font-weight: 600;
 
   letter-spacing: 0.1em;
+
+  line-height: 1;
 
   text-transform: uppercase;
 
@@ -116,71 +135,315 @@
 }
 
 
-.contact-logo-name span {
-  color: var(--contact-green);
+.contact-logo-name > span {
+  color:
+    var(--contact-green);
 }
 
 
-/* NAV LINKS */
+.contact-logo-wrap:hover
+.contact-navbar-logo {
+  opacity: 0.92;
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* =========================================================
+   NAV LINKS
+========================================================= */
 
 .contact-nav-links {
   display: flex;
 
   align-items: center;
 
-  gap: clamp(22px, 2.6vw, 40px);
+  gap:
+    clamp(
+      22px,
+      2.6vw,
+      40px
+    );
 }
 
 
 .contact-nav-links a {
   position: relative;
 
-  color: rgba(255, 255, 255, 0.62);
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.64
+    );
 
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 600;
 
   letter-spacing: 0.14em;
 
   text-transform: uppercase;
 
-  transition: color 0.25s ease;
+  white-space: nowrap;
+
+  transition:
+    color 0.25s ease;
 }
 
 
-.contact-nav-links a:hover {
+.contact-nav-links a::after {
+  position: absolute;
+
+  right: 0;
+  bottom: -10px;
+  left: 0;
+
+  width: 0;
+  height: 2px;
+
+  margin: auto;
+
+  background:
+    var(--contact-green);
+
+  content: "";
+
+  transition:
+    width 0.25s ease;
+}
+
+
+.contact-nav-links a:hover,
+.contact-nav-links a.active {
   color: #ffffff;
 }
 
 
-/* NAV BUTTON */
+.contact-nav-links a:hover::after,
+.contact-nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   NAV BUTTON
+========================================================= */
 
 .contact-nav-button {
   display: inline-flex;
 
-  min-height: 45px;
+  min-height: 46px;
 
   align-items: center;
   justify-content: center;
 
-  margin-left: clamp(22px, 3vw, 38px);
+  margin-left:
+    clamp(
+      22px,
+      3vw,
+      38px
+    );
 
-  padding: 0 21px;
+  padding:
+    0
+    22px;
 
-  border: 1px solid rgba(109, 168, 120, 0.45);
+  border:
+    1px solid
+    rgba(
+      109,
+      168,
+      120,
+      0.42
+    );
 
-  background: var(--contact-green);
+  background:
+    rgba(
+      109,
+      168,
+      120,
+      0.04
+    );
 
-  color: var(--contact-black);
+  color: #ffffff;
 
-  font-size: 0.69rem;
+  font-size: 0.71rem;
   font-weight: 700;
 
   letter-spacing: 0.12em;
 
   text-transform: uppercase;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
+
+.contact-nav-button:hover {
+  background:
+    var(--contact-green);
+
+  color:
+    var(--contact-black);
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .contact-navbar-logo {
+    width: 58px;
+    height: 58px;
+  }
+
+
+  .contact-logo-name {
+    font-size: 1.15rem;
+  }
+
+
+  .contact-nav-links {
+    gap: 24px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .contact-navbar {
+    min-height: 76px;
+
+    padding:
+      0
+      22px;
+  }
+
+
+  .contact-navbar-logo {
+    width: 48px;
+    height: 48px;
+  }
+
+
+  .contact-logo-name {
+    font-size: 1rem;
+  }
+
+
+  .contact-nav-links {
+    display: none;
+  }
+
+
+  .contact-nav-button {
+    margin-left: auto;
+
+    min-height: 42px;
+
+    padding:
+      0
+      15px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .contact-navbar {
+    min-height: 70px;
+
+    padding:
+      0
+      16px;
+  }
+
+
+  .contact-navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .contact-logo-name {
+    font-size: 0.79rem;
+
+    letter-spacing: 0.07em;
+  }
+
+
+  .contact-logo-wrap {
+    gap: 8px;
+  }
+
+
+  .contact-nav-button {
+    min-height: 39px;
+
+    padding:
+      0
+      10px;
+
+    font-size: 0.53rem;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .contact-navbar {
+    padding:
+      0
+      12px;
+  }
+
+
+  .contact-navbar-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .contact-logo-name {
+    font-size: 0.67rem;
+  }
+
+
+  .contact-nav-button {
+    padding:
+      0
+      8px;
+
+    font-size: 0.49rem;
+  }
+
+}
 
 /* =========================================================
    HERO
@@ -905,6 +1168,804 @@
     align-items: flex-start;
 
     gap: 12px;
+  }
+
+} /* =========================================================
+   FOOTER — SAME AS OTHER PAGES
+========================================================= */
+
+.footer {
+  position: relative;
+
+  padding:
+    75px
+    clamp(24px, 7vw, 118px)
+    28px;
+
+  background: #06090c;
+
+  color: #ffffff;
+}
+
+
+.footer-inner {
+  width:
+    min(
+      var(--contact-max-width),
+      100%
+    );
+
+  margin:
+    0
+    auto;
+}
+
+
+.footer-top {
+  display:
+    grid;
+
+  padding-bottom:
+    55px;
+
+  grid-template-columns:
+    1.4fr
+    repeat(
+      3,
+      0.7fr
+    );
+
+  gap:
+    45px;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.footer-logo {
+  display:
+    inline-block;
+
+  color:
+    #ffffff;
+
+  font-family:
+    "Oswald",
+    sans-serif;
+
+  font-size:
+    1.5rem;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.06em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.footer-logo span {
+  color:
+    var(--contact-green);
+}
+
+
+.footer-brand p {
+  max-width:
+    350px;
+
+  margin:
+    18px
+    0
+    0;
+
+  color:
+    rgba(246, 248, 251, 0.48);
+
+  font-size:
+    0.88rem;
+
+  line-height:
+    1.7;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    flex-start;
+
+  gap:
+    11px;
+}
+
+
+.footer-column h3 {
+  margin:
+    0
+    0
+    7px;
+
+  color:
+    #ffffff;
+
+  font-family:
+    "Oswald",
+    sans-serif;
+
+  font-size:
+    1rem;
+
+  font-weight:
+    500;
+
+  letter-spacing:
+    0.06em;
+
+  text-transform:
+    uppercase;
+}
+
+
+.footer-links {
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    flex-start;
+
+  gap:
+    11px;
+}
+
+
+.footer-column a,
+.footer-column p {
+  margin: 0;
+
+  color:
+    rgba(246, 248, 251, 0.48);
+
+  font-size:
+    0.82rem;
+
+  line-height:
+    1.5;
+}
+
+
+.footer-column a {
+  transition:
+    color 0.25s ease;
+}
+
+
+.footer-column a:hover {
+  color:
+    var(--contact-green-light);
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  padding-top:
+    24px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.footer-bottom p,
+.footer-bottom a {
+  margin:
+    0;
+
+  color:
+    rgba(246, 248, 251, 0.34);
+
+  font-size:
+    0.72rem;
+}
+
+
+.footer-bottom-links {
+  display:
+    flex;
+
+  gap:
+    18px;
+}
+
+
+.footer-bottom a {
+  transition:
+    color 0.25s ease;
+}
+
+
+.footer-bottom a:hover {
+  color:
+    var(--contact-green-light);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .footer-top {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(0, 1fr)
+      );
+  }
+
+
+  .footer-brand {
+    grid-column:
+      1 / -1;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .footer {
+    padding:
+      60px
+      20px
+      24px;
+  }
+
+
+  .footer-top {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      34px;
+  }
+
+
+  .footer-brand {
+    grid-column:
+      auto;
+  }
+
+
+  .footer-bottom {
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+    gap:
+      15px;
+  }
+
+
+  .footer-bottom-links {
+    flex-wrap:
+      wrap;
+  }
+
+}
+
+.text-arrow {
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+
+  font-variant-emoji: text;
+
+  line-height: 1;
+}
+/* =========================================================
+   CONTACT MOBILE NAV
+   MATCH HOME / ABOUT / SERVICES / PROJECTS
+========================================================= */
+
+.contact-mobile-grid-button,
+.contact-mobile-contact-link {
+  display: none;
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .contact-navbar {
+    position: absolute;
+    z-index: 200;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    min-height: 76px;
+
+    padding:
+      0
+      20px;
+
+    background:
+      #0d1317;
+  }
+
+
+  .contact-logo-wrap {
+    position: relative;
+    z-index: 220;
+
+    margin-right: auto;
+
+    gap: 10px;
+  }
+
+
+  .contact-navbar-logo {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+  }
+
+
+  .contact-logo-name {
+    font-size: 1rem;
+
+    letter-spacing: 0.08em;
+  }
+
+
+  /* HIDE DESKTOP CONTACT */
+
+  .contact-nav-button,
+  .contact-desktop-contact {
+    display: none;
+  }
+
+
+  /* =======================================================
+     GRID BUTTON
+  ======================================================= */
+
+  .contact-mobile-grid-button {
+    position: relative;
+    z-index: 220;
+
+    display: grid;
+
+    width: 42px;
+    height: 42px;
+
+    margin-left: auto;
+
+    padding: 0;
+
+    place-content: center;
+
+    grid-template-columns:
+      repeat(2, 6px);
+
+    grid-template-rows:
+      repeat(2, 6px);
+
+    gap: 5px;
+
+    border:
+      1px solid
+      rgba(109, 168, 120, 0.38);
+
+    background:
+      transparent;
+
+    cursor: pointer;
+  }
+
+
+  .contact-mobile-grid-button span {
+    display: block;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 1px;
+
+    background:
+      var(--contact-green-light);
+
+    transition:
+      transform 0.25s ease;
+  }
+
+
+  .contact-mobile-grid-button.open span:nth-child(1) {
+    transform:
+      translate(2px, 2px);
+  }
+
+
+  .contact-mobile-grid-button.open span:nth-child(2) {
+    transform:
+      translate(-2px, 2px);
+  }
+
+
+  .contact-mobile-grid-button.open span:nth-child(3) {
+    transform:
+      translate(2px, -2px);
+  }
+
+
+  .contact-mobile-grid-button.open span:nth-child(4) {
+    transform:
+      translate(-2px, -2px);
+  }
+
+
+  /* =======================================================
+     MOBILE DROPDOWN
+  ======================================================= */
+
+  .contact-nav-links {
+    position: absolute;
+    z-index: 210;
+
+    top: 76px;
+    right: 0;
+    left: 0;
+
+    display: flex;
+
+    max-height: 0;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    overflow: hidden;
+
+    padding:
+      0
+      22px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+
+    background:
+      #0d1317;
+
+    gap: 0;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition:
+      max-height 0.4s ease,
+      padding 0.4s ease,
+      opacity 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+
+  .contact-nav-links-open {
+    max-height: 420px;
+
+    padding:
+      18px
+      22px
+      26px;
+
+    opacity: 1;
+
+    visibility: visible;
+  }
+
+
+  .contact-nav-links a {
+    width: 100%;
+
+    padding:
+      16px
+      2px;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.07);
+
+    color:
+      rgba(255, 255, 255, 0.7);
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing:
+      0.13em;
+
+    text-transform:
+      uppercase;
+  }
+
+
+  .contact-nav-links a::after {
+    display: none;
+  }
+
+
+  .contact-mobile-contact-link {
+    display: block;
+
+    border-bottom:
+      none !important;
+
+    color:
+      var(--contact-green-light) !important;
+  }
+
+
+  /* =======================================================
+     CONTACT PAGE
+  ======================================================= */
+
+  .contact-hero {
+    min-height: 100vh;
+
+    padding:
+      130px
+      30px
+      110px;
+  }
+
+
+  .contact-inner {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      60px;
+  }
+
+
+  .contact-heading h1 {
+    font-size:
+      clamp(
+        4rem,
+        12vw,
+        6rem
+      );
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONE
+========================================================= */
+
+@media (max-width: 520px) {
+
+  .contact-navbar {
+    min-height: 70px;
+
+    padding:
+      0
+      16px;
+  }
+
+
+  .contact-logo-wrap {
+    gap: 8px;
+  }
+
+
+  .contact-navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .contact-logo-name {
+    font-size: 0.79rem;
+
+    letter-spacing: 0.07em;
+  }
+
+
+  .contact-mobile-grid-button {
+    width: 40px;
+    height: 40px;
+  }
+
+
+  .contact-nav-links {
+    top: 70px;
+
+    padding:
+      0
+      18px;
+  }
+
+
+  .contact-nav-links-open {
+    padding:
+      16px
+      18px
+      24px;
+  }
+
+
+  /* =======================================================
+     CONTACT CONTENT
+  ======================================================= */
+
+  .contact-hero {
+    min-height: 100vh;
+
+    padding:
+      115px
+      20px
+      90px;
+  }
+
+
+  .contact-inner {
+    gap: 45px;
+  }
+
+
+  .contact-heading h1 {
+    font-size:
+      clamp(
+        3.6rem,
+        18vw,
+        5rem
+      );
+  }
+
+
+  .contact-heading p {
+    font-size: 0.9rem;
+
+    line-height: 1.7;
+  }
+
+
+  .contact-item {
+    min-height: 115px;
+
+    padding:
+      22px
+      0;
+
+    grid-template-columns:
+      30px
+      minmax(0, 1fr)
+      38px;
+
+    gap: 12px;
+  }
+
+
+  .contact-item:hover {
+    padding-left: 0;
+  }
+
+
+  .contact-item-content h2 {
+    font-size: 1.2rem;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  .contact-item-content span {
+    font-size: 0.58rem;
+  }
+
+
+  .contact-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  .contact-footer {
+    right: 20px;
+    bottom: 20px;
+    left: 20px;
+
+    font-size: 0.5rem;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL PHONE
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .contact-navbar {
+    padding:
+      0
+      12px;
+  }
+
+
+  .contact-navbar-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+
+  .contact-logo-name {
+    font-size: 0.68rem;
+
+    letter-spacing: 0.05em;
+  }
+
+
+  .contact-mobile-grid-button {
+    width: 38px;
+    height: 38px;
+  }
+
+
+  .contact-heading h1 {
+    font-size: 3.4rem;
+  }
+
+
+  .contact-item-content h2 {
+    font-size: 1.05rem;
   }
 
 }

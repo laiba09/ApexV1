@@ -1,89 +1,349 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
+
+/* =========================================================
+   MAIN ASSETS
+========================================================= */
+
 import truckHero from "./assets/truck-hero.png";
-import projectOne from "./assets/project-one.jpg";
-import projectTwo from "./assets/project-two.jpg";
-import projectThree from "./assets/project-three.jpg";
-import projectFour from "./assets/Truck_road.jpg";
+
 import apexPhone from "./assets/apex-phone.png";
 import apexInterchange from "./assets/apex-interchange.png";
 import apexNavLogo from "./assets/apex-nav-logo.png";
 
-function App() {
-  useEffect(() => {
-    const revealElements = document.querySelectorAll(".reveal");
 
-    // Fallback for older browsers: just show everything.
+/* =========================================================
+   PROJECT IMAGES
+========================================================= */
+
+import heddonGretaProject from "./assets/1_heddon_greta.png";
+import macquarieProject from "./assets/2_macquarie_park_bus_depot.png";
+import tarongaProject from "./assets/3_taronga_zoo_mosman.png";
+import goldenHwyProject from "./assets/4_golden_hwy_meriwa.png";
+import grandviewProject from "./assets/5_grandview_drive_newport.png";
+
+
+/* =========================================================
+   CLIENT LOGOS
+========================================================= */
+
+import clientAltus from "./assets/client-altus.png";
+import clientVari from "./assets/client-vari.png";
+import clientAOne from "./assets/client-aone.png";
+import clientBorger from "./assets/client-borger.png";
+import clientTS from "./assets/client-ts.png";
+import clientAST from "./assets/client-ast.png";
+import clientGartnerRose from "./assets/client-gartnerrose.png";
+import clientNational from "./assets/client-national.png";
+import clientRSN from "./assets/client-rsn.png";
+import clientEire from "./assets/client-eire.png";
+import clientYuin from "./assets/client-yuin.png";
+import clientSMG from "./assets/client-smg.png";
+import clientRoadworx from "./assets/client-roadworx.png";
+
+
+/* =========================================================
+   CLIENT DATA
+========================================================= */
+
+const clients = [
+  {
+    name: "Altus Group",
+    logo: clientAltus,
+  },
+  {
+    name: "Vari Group",
+    logo: clientVari,
+  },
+  {
+    name: "A One Earthworks",
+    logo: clientAOne,
+  },
+  {
+    name: "Borger Traffic",
+    logo: clientBorger,
+  },
+  {
+    name: "T&S",
+    logo: clientTS,
+  },
+  {
+    name: "AST Linemarking",
+    logo: clientAST,
+  },
+  {
+    name: "Gartner Rose",
+    logo: clientGartnerRose,
+  },
+  {
+    name: "National Integrated Services",
+    logo: clientNational,
+  },
+  {
+    name: "Road Safety Network",
+    logo: clientRSN,
+  },
+  {
+    name: "EIRE Civil Infrastructure",
+    logo: clientEire,
+  },
+  {
+    name: "Yuin Traffic Control",
+    logo: clientYuin,
+  },
+  {
+    name: "Scorpian Management Group",
+    logo: clientSMG,
+  },
+  {
+    name: "Roadworx",
+    logo: clientRoadworx,
+  },
+];
+
+
+/* =========================================================
+   PROJECT DATA
+========================================================= */
+
+const homeProjects = [
+  {
+    number: "01",
+    title: "Macquarie Park Bus Depot",
+    category: "Transport Infrastructure",
+    image: macquarieProject,
+    client: "Infrastructure for a Sustainable Future",
+    location: "Macquarie Park, NSW",
+  },
+
+  {
+    number: "02",
+    title: "83 Main Road, Heddon Greta",
+    category: "Road Infrastructure",
+    image: heddonGretaProject,
+    client: "Axial Construction",
+    location: "Heddon Greta, NSW",
+  },
+
+  {
+    number: "03",
+    title: "Golden Hwy, Merriwa",
+    category: "Civil Construction",
+    image: goldenHwyProject,
+    client: "A One Earthworks",
+    location: "Merriwa, NSW",
+  },
+
+  {
+    number: "04",
+    title: "55 Grandview Drive, Newport",
+    category: "Construction Traffic Management",
+    image: grandviewProject,
+    client: "Gartner Rose",
+    location: "Newport, NSW",
+  },
+
+  {
+    number: "05",
+    title: "Taronga Zoo — Athol Wharf Road",
+    category: "Roadworks & Traffic Management",
+    image: tarongaProject,
+    client: "Gartner Rose",
+    location: "Mosman, NSW",
+  },
+];
+
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+
+  /* =========================================================
+     SCROLL REVEAL
+  ========================================================= */
+
+  useEffect(() => {
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
     if (!("IntersectionObserver" in window)) {
       revealElements.forEach((element) => {
         element.classList.add("reveal-visible");
       });
+
       return;
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("reveal-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      },
-      {
-        threshold: 0.08,
-        rootMargin: "0px 0px -40px 0px",
-      }
-    );
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add(
+                "reveal-visible"
+              );
+
+              observer.unobserve(
+                entry.target
+              );
+            }
+          });
+        },
+        {
+          threshold: 0.08,
+          rootMargin: "0px 0px -40px 0px",
+        }
+      );
 
     revealElements.forEach((element) => {
       observer.observe(element);
     });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+    };
   }, []);
+
+
+  /* =========================================================
+     CLOSE MOBILE MENU WHEN SCREEN GETS BIGGER
+  ========================================================= */
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 850) {
+        setMenuOpen(false);
+      }
+    };
+
+    window.addEventListener(
+      "resize",
+      handleResize
+    );
+
+    return () => {
+      window.removeEventListener(
+        "resize",
+        handleResize
+      );
+    };
+  }, []);
+
 
   return (
     <main className="home-page">
+
+
       {/* =====================================================
           NAVIGATION
       ====================================================== */}
-<header className="navbar">
-  <a href="/" className="home-logo-wrap">
-    <img
-      src={apexNavLogo}
-      alt="APEX Road Network"
-      className="home-navbar-logo-image"
-    />
 
-    <span className="home-logo-name">
-      APEX ROAD NETWORK<span>.</span>
-    </span>
-  </a>
+      <header className="navbar">
 
-  <nav className="nav-links">
-    <a href="/" className="active">
-      Home
-    </a>
 
-    <a href="/about">
-      About
-    </a>
+        {/* LOGO */}
 
-    <a href="/services">
-      Services
-    </a>
+        <a
+          href="/"
+          className="home-logo-wrap"
+        >
+          <img
+            src={apexNavLogo}
+            alt="APEX Road Network"
+            className="home-navbar-logo-image"
+          />
 
-    <a href="/projects">
-      Projects
-    </a>
-  </nav>
+          <span className="home-logo-name">
+            APEX ROAD NETWORK<span>.</span>
+          </span>
+        </a>
 
-  <a href="/contact" className="nav-button">
-  Contact Us
-</a>
-</header>
+
+        {/* NAVIGATION LINKS */}
+
+        <nav
+          className={`nav-links ${
+            menuOpen
+              ? "nav-links-open"
+              : ""
+          }`}
+        >
+          <a
+            href="/"
+            className="active"
+            onClick={() => setMenuOpen(false)}
+          >
+            Home
+          </a>
+
+          <a
+            href="/about"
+            onClick={() => setMenuOpen(false)}
+          >
+            About
+          </a>
+
+          <a
+            href="/services"
+            onClick={() => setMenuOpen(false)}
+          >
+            Services
+          </a>
+
+          <a
+            href="/projects"
+            onClick={() => setMenuOpen(false)}
+          >
+            Projects
+          </a>
+
+          <a
+            href="/contact"
+            className="mobile-contact-link"
+            onClick={() => setMenuOpen(false)}
+          >
+            Contact Us
+          </a>
+        </nav>
+
+
+        {/* DESKTOP CONTACT BUTTON */}
+
+        <a
+          href="/contact"
+          className="nav-button"
+        >
+          Contact Us
+        </a>
+
+
+        {/* MOBILE GRID BUTTON */}
+
+        <button
+          type="button"
+          className={`mobile-grid-button ${
+            menuOpen
+              ? "open"
+              : ""
+          }`}
+          onClick={() =>
+            setMenuOpen(
+              (current) => !current
+            )
+          }
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </header>
+
+
 
       {/* =====================================================
           HERO
@@ -92,704 +352,1165 @@ function App() {
       <section
         className="hero"
         id="home"
-        style={{ backgroundImage: `url(${truckHero})` }}
+        style={{
+          backgroundImage: `url(${truckHero})`,
+        }}
       >
+
         <div className="hero-overlay"></div>
         <div className="hero-grid"></div>
 
+
         <div className="hero-content reveal">
+
           <div className="eyebrow">
+
             <span className="eyebrow-dot"></span>
+
             Reliable · Safe · Efficient
+
           </div>
+
 
           <h1>
             SMART TRAFFIC ENGINEERING
             <br />
-            <span>KEEPS YOUR PROJECT MOVING</span>
+
+            <span>
+              KEEPS YOUR PROJECT MOVING
+            </span>
           </h1>
 
+
           <p className="hero-description">
-            Practical traffic solutions for complex civil and infrastructure projects across NSW and the ACT.
-             Senior-led, site-focused and designed for smooth project delivery.
+            Practical traffic solutions for complex civil and infrastructure
+            projects across Australia. Senior-led, site-focused and designed
+            for smooth project delivery.
           </p>
 
+
           <div className="hero-actions">
-            <a href="#contact" className="primary-button">
+
+            <a
+              href="/contact"
+              className="primary-button"
+            >
               Discuss Your Project
-              <span>↗</span>
+
+              <span className="text-arrow">↗︎</span>
             </a>
 
-            <a href="#services" className="secondary-button">
+
+            <a
+              href="#services"
+              className="secondary-button"
+            >
               Explore Services
             </a>
+
           </div>
+
         </div>
+
 
         <div className="hero-bottom reveal">
+
           <div className="hero-brand">
-            <span>APEX ROAD NETWORK</span>
+
+            <span>
+              APEX ROAD NETWORK
+            </span>
+
             <div className="brand-line"></div>
+
           </div>
 
-          
         </div>
+
       </section>
+
+
+      {/* =====================================================
+          TRUSTED BY
+      ====================================================== */}
+
+      <section className="clients-banner">
+
+        <div className="clients-banner-heading reveal">
+
+          <span className="clients-banner-kicker">
+            Trusted By
+          </span>
+
+
+          <p>
+            Proud to work alongside leading contractors, developers and
+            infrastructure organisations across Australia.
+          </p>
+
+        </div>
+
+
+        <div className="clients-slider">
+
+          <div className="clients-slider-track">
+
+            {clients.map((client, index) => (
+
+              <div
+                className="client-logo-card"
+                key={`client-first-${index}`}
+              >
+
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                />
+
+              </div>
+
+            ))}
+
+
+            {clients.map((client, index) => (
+
+              <div
+                className="client-logo-card"
+                key={`client-second-${index}`}
+                aria-hidden="true"
+              >
+
+                <img
+                  src={client.logo}
+                  alt=""
+                />
+
+              </div>
+
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
 
       {/* =====================================================
           SERVICES
       ====================================================== */}
 
-      {/* =====================================================
-    SERVICES
-====================================================== */}
+      <section
+        className="services-section"
+        id="services"
+      >
 
-<section className="services-section" id="services">
-  <div className="services-glow services-glow-one"></div>
-  <div className="services-glow services-glow-two"></div>
+        <div className="services-glow services-glow-one"></div>
+        <div className="services-glow services-glow-two"></div>
 
-  {/* =====================================================
-      SERVICES INTRODUCTION
-  ====================================================== */}
 
-  <div className="services-header">
-    <div className="services-heading-row">
+        {/* SERVICES INTRODUCTION */}
 
-      {/* Image */}
-      <div className="services-header-visual services-phone-visual reveal">
-        <div className="phone-glow"></div>
+        <div className="services-header">
 
-        <div
-          className="phone-interactive"
-          onMouseMove={(e) => {
-            const box = e.currentTarget.getBoundingClientRect();
+          <div className="services-heading-row">
 
-            const x = e.clientX - box.left;
-            const y = e.clientY - box.top;
 
-            const centerX = box.width / 2;
-            const centerY = box.height / 2;
+            {/* PHONE VISUAL */}
 
-            const rotateY = ((x - centerX) / centerX) * 7;
-            const rotateX = ((centerY - y) / centerY) * 7;
+            <div className="services-header-visual services-phone-visual reveal">
 
-            e.currentTarget.style.setProperty(
-              "--rotate-x",
-              `${rotateX}deg`
-            );
+              <div className="phone-glow"></div>
 
-            e.currentTarget.style.setProperty(
-              "--rotate-y",
-              `${rotateY}deg`
-            );
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.setProperty("--rotate-x", "0deg");
-            e.currentTarget.style.setProperty("--rotate-y", "0deg");
-          }}
-        >
-          <img
-            src={apexPhone}
-            alt="APEX Road Network mobile branding"
-            className="apex-phone-image"
-          />
+
+              <div
+                className="phone-interactive"
+
+                onMouseMove={(e) => {
+                  const box =
+                    e.currentTarget.getBoundingClientRect();
+
+                  const x =
+                    e.clientX - box.left;
+
+                  const y =
+                    e.clientY - box.top;
+
+                  const centerX =
+                    box.width / 2;
+
+                  const centerY =
+                    box.height / 2;
+
+                  const rotateY =
+                    ((x - centerX) / centerX) * 7;
+
+                  const rotateX =
+                    ((centerY - y) / centerY) * 7;
+
+
+                  e.currentTarget.style.setProperty(
+                    "--rotate-x",
+                    `${rotateX}deg`
+                  );
+
+                  e.currentTarget.style.setProperty(
+                    "--rotate-y",
+                    `${rotateY}deg`
+                  );
+                }}
+
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.setProperty(
+                    "--rotate-x",
+                    "0deg"
+                  );
+
+                  e.currentTarget.style.setProperty(
+                    "--rotate-y",
+                    "0deg"
+                  );
+                }}
+              >
+
+                <img
+                  src={apexPhone}
+                  alt="APEX Road Network mobile branding"
+                  className="apex-phone-image"
+                />
+
+              </div>
+
+
+              <div className="phone-detail phone-detail-one">
+
+                <span></span>
+
+                TRAFFIC ENGINEERING
+
+              </div>
+
+
+              <div className="phone-detail phone-detail-two">
+                Apex Road Network
+              </div>
+
+            </div>
+
+
+            {/* SERVICES HEADING */}
+
+            <div className="services-header-content reveal">
+
+              <div className="services-eyebrow">
+
+                <span></span>
+
+                What We Deliver
+
+              </div>
+
+
+              <h2>
+                ENGINEERING
+                <br />
+
+                MADE
+                <br />
+
+                <span>
+                  PRACTICAL
+                </span>
+              </h2>
+
+
+              <p>
+                Senior-led traffic engineering support for infrastructure,
+                civil construction, road upgrades, bridge works and development
+                projects across Australia. Practical solutions designed around
+                real construction and operational conditions.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="phone-detail phone-detail-one">
-          <span></span>
-          TRAFFIC ENGINEERING
+
+        {/* =====================================================
+            SERVICES GRID
+        ====================================================== */}
+
+        <div className="services-grid">
+
+
+          <article className="service-card reveal">
+
+            <div className="service-number">
+              01
+            </div>
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Safety
+              </span>
+
+
+              <h3>
+                Road Safety Audits
+              </h3>
+
+
+              <p>
+                Independent road safety audits for infrastructure, road
+                upgrades and development projects, identifying risks at
+                every stage.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
+
+          <article className="service-card reveal">
+
+            <div className="service-number">
+              02
+            </div>
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Planning
+              </span>
+
+
+              <h3>
+                Traffic Management Plans
+              </h3>
+
+
+              <p>
+                Practical CTMPs and TMPs developed for civil construction,
+                infrastructure works and complex live traffic environments.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
+
+          <article className="service-card reveal">
+
+            <div className="service-number">
+              03
+            </div>
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Staging
+              </span>
+
+
+              <h3>
+                Traffic Staging Design
+              </h3>
+
+
+              <p>
+                Construction-focused staging solutions for roadworks,
+                bridge works and major projects, maintaining access
+                and safe traffic movement.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
+
+          <article className="service-card reveal">
+
+            <div className="service-number">
+              04
+            </div>
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Analysis
+              </span>
+
+
+              <h3>
+                Traffic Modelling
+              </h3>
+
+
+              <p>
+                Detailed traffic modelling and network analysis supporting
+                infrastructure, development and transport planning decisions.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
+
+          <article className="service-card reveal">
+
+            <div className="service-number">
+              05
+            </div>
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Assessment
+              </span>
+
+
+              <h3>
+                Traffic Impact Statements
+              </h3>
+
+
+              <p>
+                Traffic assessments covering access, network performance,
+                vehicle movements and the impacts of proposed developments.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
+
+          <article className="service-card reveal">
+
+            <div className="service-number">
+              06
+            </div>
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Access
+              </span>
+
+
+              <h3>
+                Site Access Design
+              </h3>
+
+
+              <p>
+                Safe and practical access design for construction sites,
+                heavy vehicles, utilities and changing project conditions.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
         </div>
 
-        <div className="phone-detail phone-detail-two">
-          Apex Road Network
+
+        <div className="services-link-wrap reveal">
+
+          <a
+            href="/services"
+            className="services-link"
+          >
+            Explore all services
+
+            <span>
+              →
+            </span>
+          </a>
+
         </div>
-      </div>
 
-      {/* Heading */}
-      <div className="services-header-content reveal">
-        <div className="services-eyebrow">
-          <span></span>
-          What We Deliver
-        </div>
+      </section>
 
-        <h2>
-          ENGINEERING
-          <br />
-          MADE
-          <br />
-          <span>PRACTICAL</span>
-        </h2>
 
-        <p>
-          Senior-led traffic engineering support for infrastructure,
-          civil construction, road upgrades, bridge works and development
-          projects across NSW and the ACT. Practical solutions designed
-          around real construction and operational conditions.
-        </p>
-      </div>
-    </div>
-  </div>
-
-  {/* =====================================================
-      SERVICES GRID
-  ====================================================== */}
-
-  <div className="services-grid">
-
-    {/* 01 */}
-    <article className="service-card reveal">
-      <div className="service-number">01</div>
-
-      <div className="service-card-content">
-        <span className="service-label">Safety</span>
-
-        <h3>Road Safety Audits</h3>
-
-        <p>
-          Independent road safety audits for infrastructure, road upgrades
-          and development projects, identifying risks at every stage.
-        </p>
-      </div>
-
-      <div className="service-arrow">↗</div>
-    </article>
-
-    {/* 02 */}
-    <article className="service-card reveal">
-      <div className="service-number">02</div>
-
-      <div className="service-card-content">
-        <span className="service-label">Planning</span>
-
-        <h3>Traffic Management Plans</h3>
-
-        <p>
-          Practical CTMPs and TMPs developed for civil construction,
-          infrastructure works and complex live traffic environments.
-        </p>
-      </div>
-
-      <div className="service-arrow">↗</div>
-    </article>
-
-    {/* 03 */}
-    <article className="service-card reveal">
-      <div className="service-number">03</div>
-
-      <div className="service-card-content">
-        <span className="service-label">Staging</span>
-
-        <h3>Traffic Staging Design</h3>
-
-        <p>
-          Construction-focused staging solutions for roadworks, bridge works
-          and major projects, maintaining access and safe traffic movement.
-        </p>
-      </div>
-
-      <div className="service-arrow">↗</div>
-    </article>
-
-    {/* 04 */}
-    <article className="service-card reveal">
-      <div className="service-number">04</div>
-
-      <div className="service-card-content">
-        <span className="service-label">Analysis</span>
-
-        <h3>Traffic Modelling</h3>
-
-        <p>
-          Detailed traffic modelling and network analysis supporting
-          infrastructure, development and transport planning decisions.
-        </p>
-      </div>
-
-      <div className="service-arrow">↗</div>
-    </article>
-
-    {/* 05 */}
-    <article className="service-card reveal">
-      <div className="service-number">05</div>
-
-      <div className="service-card-content">
-        <span className="service-label">Assessment</span>
-
-        <h3>Traffic Impact Statements</h3>
-
-        <p>
-          Traffic assessments covering access, network performance,
-          vehicle movements and the impacts of proposed developments.
-        </p>
-      </div>
-
-      <div className="service-arrow">↗</div>
-    </article>
-
-    {/* 06 */}
-    <article className="service-card reveal">
-      <div className="service-number">06</div>
-
-      <div className="service-card-content">
-        <span className="service-label">Access</span>
-
-        <h3>Site Access Design</h3>
-
-        <p>
-          Safe and practical access design for construction sites,
-          heavy vehicles, utilities and changing project conditions.
-        </p>
-      </div>
-
-      <div className="service-arrow">↗</div>
-    </article>
-
-  </div>
-
-  {/* =====================================================
-      SERVICES LINK
-  ====================================================== */}
-
-  <div className="services-link-wrap reveal">
-    <a href="/services" className="services-link">
-      Explore all services
-      <span>→</span>
-    </a>
-  </div>
-
-  {/* =====================================================
-      SCROLLING BANNER
-  ====================================================== */}
-
-  <div className="services-marquee">
-    <div className="services-marquee-track">
-
-      <span>TRAFFIC ENGINEERING</span>
-      <span className="marquee-dot"></span>
-
-      <span>ROAD SAFETY</span>
-      <span className="marquee-dot"></span>
-
-      <span>TRAFFIC STAGING</span>
-      <span className="marquee-dot"></span>
-
-      <span>TRANSPORT PLANNING</span>
-      <span className="marquee-dot"></span>
-
-      <span>INFRASTRUCTURE</span>
-      <span className="marquee-dot"></span>
-
-      <span>TRAFFIC MODELLING</span>
-      <span className="marquee-dot"></span>
-
-      <span>TRAFFIC ENGINEERING</span>
-      <span className="marquee-dot"></span>
-
-      <span>ROAD SAFETY</span>
-      <span className="marquee-dot"></span>
-
-      <span>TRAFFIC STAGING</span>
-      <span className="marquee-dot"></span>
-
-      <span>TRANSPORT PLANNING</span>
-      <span className="marquee-dot"></span>
-
-      <span>INFRASTRUCTURE</span>
-      <span className="marquee-dot"></span>
-
-      <span>TRAFFIC MODELLING</span>
-      <span className="marquee-dot"></span>
-
-    </div>
-  </div>
-</section>
       {/* =====================================================
           WHY CHOOSE APEX
       ====================================================== */}
 
-{/* =====================================================
-    WHY CHOOSE APEX
-====================================================== */}
+      <section
+        className="why-section"
+        id="about"
+      >
 
-<section className="why-section" id="about">
-  <div className="why-section-grid"></div>
-  <div className="why-section-glow"></div>
+        <div className="why-section-grid"></div>
+        <div className="why-section-glow"></div>
 
-  <div className="why-section-inner">
-    <div className="why-section-left reveal">
-      <div className="why-eyebrow">
-        <span></span>
-        Why Choose Apex
-      </div>
 
-      <h2>
-        BUILT FOR
-        <br />
-        <span>BETTER PROJECTS</span>
-      </h2>
+        <div className="why-section-inner">
 
-      <div className="why-visual-wrap">
-        <div className="why-visual-glow"></div>
 
-        <div className="why-visual">
-          <img
-            src={apexInterchange}
-            alt="APEX Road Network isometric highway interchange illustration"
-            className="why-visual-image"
-          />
-        </div>
-      </div>
-    </div>
+          <div className="why-section-left reveal">
 
-    <div className="why-section-right reveal">
-      <p className="why-intro">
-        Apex Road Network brings together more than 15 years of industry
-        experience across traffic engineering, temporary traffic management
-        and transport infrastructure projects throughout NSW and the ACT.
-        Our experience spans major infrastructure, civil construction,
-        road upgrades, bridge works, utilities and complex construction
-        environments.
-      </p>
+            <div className="why-eyebrow">
 
-      <div className="why-list">
-        <article className="why-item">
-          <span>01</span>
+              <span></span>
 
-          <div>
-            <h3>Proven Expertise</h3>
+              Why Choose Apex
 
-            <p>
-              Senior-led experience working with TfNSW, Transport Canberra,
-              local councils, principal contractors, developers and major
-              infrastructure delivery organisations.
-            </p>
-          </div>
-        </article>
-
-        <article className="why-item">
-          <span>02</span>
-
-          <div>
-            <h3>Practical Solutions</h3>
-
-            <p>
-              Traffic solutions designed to be technically compliant,
-              practical and constructible, with real site and operational
-              conditions considered from the outset.
-            </p>
-          </div>
-        </article>
-
-        <article className="why-item">
-          <span>03</span>
-
-          <div>
-            <h3>Safety & Compliance</h3>
-
-            <p>
-              A strong focus on safe outcomes for workers, road users,
-              pedestrians and surrounding communities throughout every
-              stage of the project.
-            </p>
-          </div>
-        </article>
-      </div>
-
-      <a href="#contact" className="why-button">
-        Learn More About Us
-        <span>↗</span>
-      </a>
-    </div>
-  </div>
-</section>
-      {/* =====================================================
-          QUOTE
-      ====================================================== */}
-{/* 
-      <section className="quote-section">
-        <div className="quote-grid"></div>
-
-        <div className="quote-inner reveal">
-          <span className="quote-mark">“</span>
-
-          <blockquote>
-            Good traffic engineering is not just about managing movement. It is
-            about creating safer, clearer and more efficient outcomes for every
-            road user.
-          </blockquote>
-
-          <div className="quote-footer">
-            <div className="quote-line"></div>
-
-            <div>
-              <p>APEX Road Network</p>
-
-              <span>Traffic Engineering & Transport Solutions</span>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
-      {/* =====================================================
-          PROJECTS
-      ====================================================== */}
-
-      <section className="projects-section" id="projects">
-        <div className="projects-grid-background"></div>
-        <div className="projects-glow"></div>
-
-        <div className="projects-inner">
-          <div className="projects-header reveal">
-            <div>
-              <div className="projects-eyebrow">
-                <span></span>
-                Recent Work
-              </div>
-
-              <h2>
-                RECENT
-                <br />
-                <span>PROJECTS</span>
-              </h2>
             </div>
 
-            <p>
-              A showcase of APEX’s experience across traffic engineering, 
-              transport infrastructure and complex project environments throughout NSW and the ACT.
-            </p>
-          </div>
 
-          <div className="projects-list">
-            {/* Large project */}
-            <article className="project-card project-card-large reveal">
-              <div className="project-image">
+            <h2>
+              BUILT FOR
+              <br />
+
+              <span>
+                BETTER PROJECTS
+              </span>
+            </h2>
+
+
+            <div className="why-visual-wrap">
+
+              <div className="why-visual-glow"></div>
+
+
+              <div className="why-visual">
+
                 <img
-                  src={projectOne}
-                  alt="Traffic management infrastructure project"
+                  src={apexInterchange}
+                  alt="APEX Road Network highway interchange illustration"
+                  className="why-visual-image"
                 />
 
-                <div className="project-overlay"></div>
-
-                <span className="project-number">01</span>
-
-                <a
-                  href="#contact"
-                  className="project-arrow"
-                  aria-label="Discuss traffic management planning project"
-                >
-                  ↗
-                </a>
               </div>
 
-              <div className="project-details">
-                <div>
-                  <span className="project-category">
-                    Traffic Management Planning
-                  </span>
-
-                  <h3>Major Road Infrastructure Works</h3>
-                </div>
-
-                <p>
-                  Traffic planning and engineering support developed to
-                  maintain safe access, reduce disruption and support efficient
-                  construction staging.
-                </p>
-              </div>
-            </article>
-
-            {/* Smaller projects */}
-            <div className="projects-small-grid">
-              <article className="project-card reveal">
-                <div className="project-image">
-                  <img
-                    src={projectTwo}
-                    alt="Construction traffic management project"
-                  />
-
-                  <div className="project-overlay"></div>
-
-                  <span className="project-number">02</span>
-
-                  <a
-                    href="#contact"
-                    className="project-arrow"
-                    aria-label="Discuss construction traffic project"
-                  >
-                    ↗
-                  </a>
-                </div>
-
-                <div className="project-details">
-                  <div>
-                    <span className="project-category">
-                      Construction Support
-                    </span>
-
-                    <h3>Construction Traffic Strategy</h3>
-                  </div>
-
-                  <p>
-                    Practical traffic advice supporting vehicle access,
-                    pedestrian safety and changing construction conditions.
-                  </p>
-                </div>
-              </article>
-
-              <article className="project-card reveal">
-                <div className="project-image">
-                  <img
-                    src={projectThree}
-                    alt="Road network safety assessment project"
-                  />
-
-                  <div className="project-overlay"></div>
-
-                  <span className="project-number">03</span>
-
-                  <a
-                    href="#contact"
-                    className="project-arrow"
-                    aria-label="Discuss road safety project"
-                  >
-                    ↗
-                  </a>
-                </div>
-
-                <div className="project-details">
-                  <div>
-                    <span className="project-category">Road Safety</span>
-
-                    <h3>Road Network Safety Review</h3>
-                  </div>
-
-                  <p>
-                    A detailed review identifying potential risks and
-                    recommending practical improvements for safer road
-                    operation.
-                  </p>
-                </div>
-              </article>
             </div>
+
           </div>
 
-          <div className="projects-footer reveal">
-            <a href="#contact" className="projects-link">
-              Discuss your next project
-              <span>→</span>
+
+          <div className="why-section-right reveal">
+
+            <p className="why-intro">
+              Apex Road Network brings together more than 15 years of industry
+              experience across traffic engineering, temporary traffic management
+              and transport infrastructure projects throughout Australia.
+              Our experience spans major infrastructure, civil construction,
+              road upgrades, bridge works, utilities and complex construction
+              environments.
+            </p>
+
+
+            <div className="why-list">
+
+
+              <article className="why-item">
+
+                <span>
+                  01
+                </span>
+
+
+                <div>
+
+                  <h3>
+                    Proven Expertise
+                  </h3>
+
+
+                  <p>
+                    Senior-led experience working with TfNSW,
+                    Transport Canberra, local councils, principal
+                    contractors, developers and major infrastructure
+                    delivery organisations.
+                  </p>
+
+                </div>
+
+              </article>
+
+
+              <article className="why-item">
+
+                <span>
+                  02
+                </span>
+
+
+                <div>
+
+                  <h3>
+                    Practical Solutions
+                  </h3>
+
+
+                  <p>
+                    Traffic solutions designed to be technically compliant,
+                    practical and constructible, with real site and operational
+                    conditions considered from the outset.
+                  </p>
+
+                </div>
+
+              </article>
+
+
+              <article className="why-item">
+
+                <span>
+                  03
+                </span>
+
+
+                <div>
+
+                  <h3>
+                    Safety & Compliance
+                  </h3>
+
+
+                  <p>
+                    A strong focus on safe outcomes for workers, road users,
+                    pedestrians and surrounding communities throughout every
+                    stage of the project.
+                  </p>
+
+                </div>
+
+              </article>
+
+            </div>
+
+
+            <a
+              href="/about"
+              className="why-button"
+            >
+              Learn More About Us
+
+              <span className="text-arrow">↗︎</span>
             </a>
+
           </div>
+
         </div>
+
       </section>
 
+{/* =====================================================
+    RECENT PROJECTS
+===================================================== */}
+
+<section
+  className="projects-section"
+  id="projects"
+>
+
+  <div className="projects-grid-background"></div>
+
+  <div className="projects-glow"></div>
+
+
+  <div className="projects-inner">
+
+
+    {/* =====================================================
+        HEADER
+    ====================================================== */}
+
+    <div className="projects-header reveal">
+
+      <div>
+
+        <div className="projects-eyebrow">
+          <span></span>
+          Selected Work
+        </div>
+
+
+        <h2>
+          RECENT
+          <br />
+
+          <span>
+            PROJECTS
+          </span>
+        </h2>
+
+      </div>
+
+
+      <p>
+        A showcase of APEX&apos;s experience across traffic engineering,
+        transport infrastructure and complex project environments
+        throughout NSW and the ACT.
+      </p>
+
+    </div>
+
+
+    {/* =====================================================
+        PROJECT LAYOUT
+    ====================================================== */}
+
+    <div className="projects-showcase">
+
+
+      {/* ===================================================
+          PROJECT 01 — LARGE LEFT
+      =================================================== */}
+
+      <article className="project-showcase-card project-showcase-main reveal">
+
+        <div className="project-showcase-image">
+
+          <img
+            src={homeProjects[0].image}
+            alt={homeProjects[0].title}
+          />
+
+          <div className="project-overlay"></div>
+
+
+          <div className="project-number">
+            {homeProjects[0].number}
+          </div>
+
+
+          <a
+            href="/projects"
+            className="project-arrow"
+            aria-label={`View ${homeProjects[0].title}`}
+          >
+            <span className="text-arrow">
+              ↗︎
+            </span>
+          </a>
+
+        </div>
+
+
+        <div className="project-showcase-content">
+
+          <span className="project-category">
+            {homeProjects[0].category}
+          </span>
+
+
+          <h3>
+            {homeProjects[0].title}
+          </h3>
+
+
+          <p>
+            Traffic planning and engineering support developed to maintain
+            safe access, reduce disruption and support efficient
+            construction staging.
+          </p>
+
+
+          <div className="project-showcase-meta">
+
+            <span>
+              {homeProjects[0].location}
+            </span>
+
+            <span>
+              {homeProjects[0].client}
+            </span>
+
+          </div>
+
+        </div>
+
+      </article>
+
+
+      {/* ===================================================
+          PROJECT 02 — TOP RIGHT
+      =================================================== */}
+
+      <article className="project-showcase-card project-showcase-small reveal">
+
+        <div className="project-showcase-image">
+
+          <img
+            src={homeProjects[1].image}
+            alt={homeProjects[1].title}
+          />
+
+          <div className="project-overlay"></div>
+
+
+          <div className="project-number">
+            {homeProjects[1].number}
+          </div>
+
+
+          <a
+            href="/projects"
+            className="project-arrow"
+            aria-label={`View ${homeProjects[1].title}`}
+          >
+            <span className="text-arrow">
+              ↗︎
+            </span>
+          </a>
+
+        </div>
+
+
+        <div className="project-showcase-content">
+
+          <span className="project-category">
+            {homeProjects[1].category}
+          </span>
+
+
+          <h3>
+            {homeProjects[1].title}
+          </h3>
+
+
+          <p>
+            Practical traffic engineering and construction support for
+            works within an active road environment.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      {/* ===================================================
+          PROJECT 03 — BOTTOM RIGHT
+      =================================================== */}
+
+      <article className="project-showcase-card project-showcase-small reveal">
+
+        <div className="project-showcase-image">
+
+          <img
+            src={homeProjects[2].image}
+            alt={homeProjects[2].title}
+          />
+
+          <div className="project-overlay"></div>
+
+
+          <div className="project-number">
+            {homeProjects[2].number}
+          </div>
+
+
+          <a
+            href="/projects"
+            className="project-arrow"
+            aria-label={`View ${homeProjects[2].title}`}
+          >
+            <span className="text-arrow">
+              ↗︎
+            </span>
+          </a>
+
+        </div>
+
+
+        <div className="project-showcase-content">
+
+          <span className="project-category">
+            {homeProjects[2].category}
+          </span>
+
+
+          <h3>
+            {homeProjects[2].title}
+          </h3>
+
+
+          <p>
+            Traffic management support designed around safe movement,
+            practical staging and real project conditions.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+    {/* =====================================================
+        VIEW ALL
+    ====================================================== */}
+
+    <div className="projects-footer reveal">
+
+      <a
+        href="/projects"
+        className="projects-link"
+      >
+        Explore All Projects
+
+        <span className="text-arrow">
+          ↗︎
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
       {/* =====================================================
           CONTACT CTA
       ====================================================== */}
 
-      <section className="cta-section" id="contact">
+      <section
+        className="cta-section"
+        id="contact"
+      >
+
         <div className="cta-grid"></div>
         <div className="cta-glow"></div>
 
+
         <div className="cta-inner reveal">
+
           <div className="cta-copy">
+
             <div className="cta-eyebrow">
+
               <span></span>
+
               Start a Conversation
+
             </div>
+
 
             <h2>
               GOT A PROJECT?
               <br />
-              <span>LET'S TALK.</span>
+
+              <span>
+                LET'S TALK.
+              </span>
             </h2>
 
+
             <p>
-              Tell us what you are working on and we will help you find the
-              right traffic engineering solution for your project.
+              Tell us what you are working on and we will help you find
+              the right traffic engineering solution for your project.
             </p>
+
           </div>
 
+
           <a
-            href="mailto:hello@apexroadnetwork.com.au"
+            href="/contact"
             className="cta-button"
           >
             Chat to Us Now
-            <span>↗</span>
+
+            <span className="text-arrow">↗︎</span>
           </a>
+
         </div>
+
       </section>
+
 
       {/* =====================================================
           FOOTER
       ====================================================== */}
 
       <footer className="footer">
+
         <div className="footer-grid"></div>
 
+
         <div className="footer-inner reveal">
+
+
           <div className="footer-top">
+
+
             <div className="footer-brand">
-              <a href="#home" className="footer-logo">
+
+              <a
+                href="/"
+                className="footer-logo"
+              >
                 APEX ROAD NETWORK<span>.</span>
               </a>
 
+
               <p>
-                Practical traffic engineering and transport solutions designed
-                to keep projects safe, compliant and moving.
+                Practical traffic engineering and transport solutions
+                designed to keep projects safe, compliant and moving.
               </p>
+
             </div>
 
+
             <div className="footer-column">
-              <h3>Navigation</h3>
+
+              <h3>
+                Navigation
+              </h3>
+
 
               <nav className="footer-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+
+                <a href="/">
+                  Home
+                </a>
+
+                <a href="/about">
+                  About
+                </a>
+
+                <a href="/services">
+                  Services
+                </a>
+
+                <a href="/projects">
+                  Projects
+                </a>
+
+                <a href="/contact">
+                  Contact
+                </a>
+
               </nav>
+
             </div>
+
 
             <div className="footer-column">
-              <h3>Services</h3>
+
+              <h3>
+                Services
+              </h3>
+
 
               <div className="footer-links">
-                <a href="#services">Traffic Management Plans</a>
-                <a href="#services">Traffic Control Plans</a>
-                <a href="#services">Road Safety Audits</a>
-                <a href="#services">Traffic Impact Assessments</a>
+
+                <a href="/services">
+                  Traffic Management Plans
+                </a>
+
+                <a href="/services">
+                  Traffic Control Plans
+                </a>
+
+                <a href="/services">
+                  Road Safety Audits
+                </a>
+
+                <a href="/services">
+                  Traffic Impact Assessments
+                </a>
+
               </div>
+
             </div>
+
 
             <div className="footer-column footer-contact">
-              <h3>Contact</h3>
+
+              <h3>
+                Contact
+              </h3>
+
 
               <a href="mailto:hello@apexroadnetwork.com.au">
-                hello@apexroadnetwork.com.au
+                harry@apexroadnetwork.com.au
               </a>
 
-              <a href="tel:+61000000000">+61 000 000 000</a>
 
-              <p>Sydney, New South Wales</p>
+              <a href="tel:+610499516282">
+                0499 516 282
+              </a>
+
+
+              <p>
+                Sydney, New South Wales
+              </p>
+
             </div>
+
           </div>
+
 
           <div className="footer-bottom">
+
             <p>
-              © {new Date().getFullYear()} APEX Road Network. All rights
-              reserved.
+              © {new Date().getFullYear()} APEX Road Network.
+              All rights reserved.
             </p>
 
+
             <div className="footer-bottom-links">
-              <a href="#privacy">Privacy Policy</a>
-              <a href="#terms">Terms</a>
+
+              <a href="#privacy">
+                Privacy Policy
+              </a>
+
+              <a href="#terms">
+                Terms
+              </a>
+
             </div>
+
           </div>
+
         </div>
+
       </footer>
+
     </main>
   );
 }
+
 
 export default App;
