@@ -4959,3 +4959,214 @@ span:last-child {
     border-radius: 1px;
   }
 }
+
+/* =========================================================
+   HOME — CENTER HEADINGS + BUTTONS ON PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* =======================================================
+     GENERAL SECTION HEADINGS
+  ======================================================= */
+
+  .services-header-content,
+  .why-section-left,
+  .projects-header > div,
+  .cta-copy {
+    text-align: center;
+  }
+
+
+  /* EYEBROWS */
+
+  .services-eyebrow,
+  .why-eyebrow,
+  .projects-eyebrow,
+  .cta-eyebrow {
+    justify-content: center;
+  }
+
+
+  /* =======================================================
+     SERVICES
+  ======================================================= */
+
+  .services-header-content {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .services-header-content h2 {
+    text-align: center;
+  }
+
+
+  .services-header-content > p {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  .services-link-wrap {
+    justify-content: center;
+  }
+
+
+  .services-link {
+    justify-content: center;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     WHY CHOOSE APEX
+  ======================================================= */
+
+  .why-section-left {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .why-section-left h2 {
+    text-align: center;
+  }
+
+
+  .why-button {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+
+  /* =======================================================
+     PROJECTS
+  ======================================================= */
+
+  .projects-header {
+    text-align: center;
+  }
+
+
+  .projects-header > div {
+    width: 100%;
+  }
+
+
+  .projects-header h2 {
+    text-align: center;
+  }
+
+
+  .projects-header > p {
+    max-width: 520px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  .projects-footer {
+    justify-content: center;
+  }
+
+
+  .projects-link {
+    justify-content: center;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .cta-inner {
+    text-align: center;
+  }
+
+
+  .cta-copy {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .cta-copy h2 {
+    text-align: center;
+  }
+
+
+  .cta-copy p {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  .cta-button {
+    width: min(100%, 320px);
+
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+}
+@media (max-width: 700px) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-brand,
+  .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

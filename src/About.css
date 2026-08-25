@@ -4047,3 +4047,265 @@
   }
 
 }
+/* =========================================================
+   ABOUT — CENTER HEADINGS + BUTTONS ON PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .about-hero-top {
+    justify-content: center;
+  }
+
+  .about-hero-label {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-hero-heading {
+    text-align: center;
+  }
+
+  .about-hero-heading h1 {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+  .about-hero-description {
+    max-width: 500px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-description-line {
+    width: 48px;
+
+    margin:
+      0
+      auto
+      14px;
+  }
+
+  .about-hero-description p {
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     SHARED EYEBROWS
+  ======================================================= */
+
+  .about-eyebrow {
+    justify-content: center;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     WHO WE ARE
+  ======================================================= */
+
+  .about-who-heading {
+    text-align: center;
+  }
+
+  .about-who-heading h2 {
+    text-align: center;
+  }
+
+  .about-who-visual {
+    justify-content: center;
+
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .about-who-signature {
+    justify-content: center;
+
+    text-align: left;
+  }
+
+
+  /* =======================================================
+     DIRECTOR
+  ======================================================= */
+
+  .about-director-copy {
+    text-align: center;
+  }
+
+  .about-director-quote-mark {
+    text-align: center;
+  }
+
+  .about-director blockquote {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+  .about-director-copy > p {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+  .about-director-signature {
+    justify-content: center;
+
+    text-align: left;
+  }
+
+
+  /* =======================================================
+     MISSION
+  ======================================================= */
+
+  .about-mission-top {
+    text-align: center;
+  }
+
+  .about-mission-content {
+    text-align: center;
+  }
+
+  .about-mission h2 {
+    text-align: center;
+  }
+
+  .about-mission-bottom {
+    max-width: 520px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    grid-template-columns: 1fr;
+  }
+
+  .about-mission-bottom > div {
+    width: 48px;
+
+    margin:
+      0
+      auto
+      2px;
+  }
+
+  .about-mission-bottom p {
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     VALUES
+  ======================================================= */
+
+  .about-values-heading {
+    align-items: center;
+
+    text-align: center;
+  }
+
+  .about-values-heading > div {
+    width: 100%;
+  }
+
+  .about-values-heading h2 {
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .about-closing-inner {
+    text-align: center;
+  }
+
+  .about-closing-copy {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .about-closing-label {
+    justify-content: center;
+  }
+
+  .about-closing h2 {
+    text-align: center;
+  }
+
+  .about-closing-copy > p {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+  .about-closing-button {
+    width: min(100%, 320px);
+
+    margin-right: auto;
+    margin-left: auto;
+
+    justify-content: center;
+  }
+
+}
+@media (max-width: 700px) {
+  .about-footer {
+    text-align: center;
+  }
+
+  .about-footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .about-footer-brand,
+  .about-footer-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-footer-brand > p {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .about-footer-links {
+    align-items: center;
+  }
+
+  .about-footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    text-align: center;
+  }
+
+  .about-footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

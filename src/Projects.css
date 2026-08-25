@@ -3788,3 +3788,245 @@
   }
 
 }
+
+/* =========================================================
+   PROJECTS — CENTER HEADINGS + BUTTONS ON PHONE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .projectspage-hero-top,
+  .projectspage-hero-copy {
+    text-align: center;
+  }
+
+
+  .projectspage-hero-location {
+    justify-content: center;
+  }
+
+
+  .projectspage-hero-copy h1 {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  .projectspage-hero-description {
+    max-width: 520px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .projectspage-hero-description > div {
+    width: 48px;
+
+    margin:
+      0
+      auto
+      14px;
+  }
+
+
+  .projectspage-hero-description p {
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     PARTNERS
+  ======================================================= */
+
+  .projectspage-partners-header {
+    text-align: center;
+  }
+
+
+  .projectspage-partners-header > div {
+    width: 100%;
+  }
+
+
+  .projectspage-eyebrow,
+  .projectspage-partners-eyebrow {
+    justify-content: center;
+
+    text-align: center;
+  }
+
+
+  .projectspage-partners-header h2,
+  .projectspage-partners-heading h2 {
+    text-align: center;
+  }
+
+
+  .projectspage-partners-header > p,
+  .projectspage-partners-heading > p {
+    max-width: 560px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     FEATURED PROJECT
+  ======================================================= */
+
+  .projectspage-featured-heading,
+  .projectspage-featured-copy {
+    text-align: center;
+  }
+
+
+  .projectspage-featured-heading h2,
+  .projectspage-featured-copy h2 {
+    text-align: center;
+  }
+
+
+  .projectspage-featured-copy > p {
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     SELECTED PROJECTS HEADING
+  ======================================================= */
+
+  .projectspage-projects-heading,
+  .projectspage-section-heading {
+    text-align: center;
+  }
+
+
+  .projectspage-projects-heading h2,
+  .projectspage-section-heading h2 {
+    text-align: center;
+  }
+
+
+  .projectspage-projects-heading > p,
+  .projectspage-section-heading > p {
+    max-width: 540px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  /* =======================================================
+     PROJECT CARDS
+
+     Keep card body copy left aligned.
+  ======================================================= */
+
+  .projectspage-project-card h3,
+  .projectspage-project-card p,
+  .projectspage-project-content,
+  .projectspage-project-copy {
+    text-align: left;
+  }
+
+
+  /* =======================================================
+     CTA
+  ======================================================= */
+
+  .cta-inner,
+  .projectspage-cta-inner {
+    text-align: center;
+  }
+
+
+  .cta-copy,
+  .projectspage-cta-copy {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .cta-copy h2,
+  .projectspage-cta-copy h2 {
+    text-align: center;
+  }
+
+
+  .cta-copy p,
+  .projectspage-cta-copy p {
+    max-width: 520px;
+
+    margin-right: auto;
+    margin-left: auto;
+
+    text-align: center;
+  }
+
+
+  .cta-button,
+  .projectspage-cta-button {
+    width: min(100%, 320px);
+
+    margin-right: auto;
+    margin-left: auto;
+
+    justify-content: center;
+  }
+
+}
+@media (max-width: 700px) {
+  .projectspage-footer {
+    text-align: center;
+  }
+
+  .projectspage-footer-main {
+    grid-template-columns: 1fr;
+  }
+
+  .projectspage-footer-brand,
+  .projectspage-footer-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .projectspage-footer-brand p {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .projectspage-footer-links {
+    align-items: center;
+  }
+
+  .projectspage-footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    text-align: center;
+  }
+}
