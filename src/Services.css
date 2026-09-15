@@ -4276,3 +4276,158 @@
   }
 
 }
+/* =========================================================
+   SERVICES HERO — PHONE IMAGE FULL COVER FIX
+   KEEP AT ABSOLUTE BOTTOM OF Services.css
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .services-hero {
+    height: 610px !important;
+    min-height: 610px !important;
+
+    /* mobile navbar is 70px */
+    padding: 70px 0 0 !important;
+
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-position: 68% center !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* DARK OVERLAY MUST START DIRECTLY UNDER NAVBAR */
+  .services-hero::after {
+    top: 70px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(17, 24, 28, 0.82) 0%,
+        rgba(17, 24, 28, 0.88) 35%,
+        rgba(17, 24, 28, 0.90) 70%,
+        rgba(17, 24, 28, 0.92) 100%
+      ) !important;
+  }
+
+
+  /* GRID ALSO STARTS DIRECTLY UNDER NAV */
+  .services-hero-grid {
+    top: 70px !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    left: 0 !important;
+  }
+
+
+  /* CONTENT */
+  .services-hero-inner {
+    width: calc(100% - 36px) !important;
+
+    height: calc(610px - 70px) !important;
+
+    padding: 48px 0 0 !important;
+
+    margin: 0 auto !important;
+  }
+
+
+  .services-hero-copy {
+    width: 100% !important;
+    max-width: 100% !important;
+
+    text-align: center !important;
+  }
+
+
+  .services-kicker {
+    justify-content: center !important;
+
+    margin-bottom: 30px !important;
+  }
+
+
+  .services-hero-copy h1 {
+    margin: 0 auto !important;
+
+    font-size:
+      clamp(
+        3rem,
+        13vw,
+        4rem
+      ) !important;
+
+    line-height: 0.92 !important;
+
+    text-align: center !important;
+  }
+
+
+  .services-hero-copy > p {
+    max-width: 500px !important;
+
+    margin:
+      34px
+      auto
+      0 !important;
+
+    padding-left: 0 !important;
+
+    font-size: 0.9rem !important;
+
+    line-height: 1.7 !important;
+
+    text-align: center !important;
+  }
+
+
+  .services-hero-copy > p::before {
+    display: none !important;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .services-hero {
+    min-height: 620px !important;
+    height: 620px !important;
+
+    background-position:
+      66% center !important;
+  }
+
+
+  .services-hero-inner {
+    height:
+      calc(620px - 70px) !important;
+
+    padding-top:
+      42px !important;
+  }
+
+
+  .services-hero-copy h1 {
+    font-size:
+      clamp(
+        2.75rem,
+        13vw,
+        3.55rem
+      ) !important;
+  }
+
+
+  .services-hero-copy > p {
+    font-size:
+      0.86rem !important;
+  }
+}

@@ -5555,3 +5555,741 @@ max-width: 100%;
   }
 
 }
+/* =========================================================
+   ABOUT PAGE — FINAL PHONE FIX
+   MUST STAY AT THE VERY BOTTOM OF About.css
+========================================================= */
+
+@media (max-width: 700px) {
+
+  /* =======================================================
+     PAGE
+  ======================================================= */
+
+  .about-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+
+  /* =======================================================
+     NAVBAR
+  ======================================================= */
+
+  .about-navbar {
+    min-height: 70px !important;
+    padding: 0 16px !important;
+  }
+
+  .about-navbar-logo-image {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .about-logo-wrap {
+    gap: 8px !important;
+  }
+
+  .about-logo-name {
+    font-size: 0.78rem !important;
+    letter-spacing: 0.065em !important;
+  }
+
+  .about-nav-button,
+  .about-desktop-contact,
+  .about-page .nav-button {
+    display: none !important;
+  }
+
+  .about-mobile-grid-button {
+    display: grid !important;
+    width: 40px !important;
+    height: 40px !important;
+    margin-left: auto !important;
+  }
+
+  .about-nav-links {
+    top: 70px !important;
+  }
+
+  .about-mobile-contact-link {
+    display: block !important;
+  }
+
+
+  /* =======================================================
+     HERO
+  ======================================================= */
+
+  .about-hero {
+    height: auto !important;
+    min-height: 610px !important;
+    padding: 70px 0 0 !important;
+  }
+
+  .about-hero-image,
+  .about-hero-overlay,
+  .about-hero-grid {
+    inset: 70px 0 0 !important;
+  }
+
+  .about-hero-image img {
+    object-position: 72% center !important;
+    filter:
+      saturate(0.65)
+      brightness(0.58)
+      contrast(0.98) !important;
+  }
+
+  .about-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(17, 24, 28, 0.99) 0%,
+        rgba(17, 24, 28, 0.96) 48%,
+        rgba(17, 24, 28, 0.78) 72%,
+        rgba(17, 24, 28, 0.38) 100%
+      ) !important;
+  }
+
+  .about-hero-inner {
+    width: calc(100% - 36px) !important;
+    height: auto !important;
+    padding: 38px 0 55px !important;
+  }
+
+  .about-hero-top {
+    justify-content: center !important;
+    margin: 0 0 30px !important;
+  }
+
+  .about-hero-label {
+    justify-content: center !important;
+    font-size: 0.64rem !important;
+    gap: 10px !important;
+    text-align: center !important;
+  }
+
+  .about-hero-label::before {
+    width: 28px !important;
+  }
+
+  .about-hero-main {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .about-hero-heading {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  .about-hero-heading h1 {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+
+    font-size:
+      clamp(
+        2.8rem,
+        13vw,
+        3.8rem
+      ) !important;
+
+    line-height: 0.94 !important;
+
+    text-align: center !important;
+  }
+
+  .about-hero-description {
+    display: block !important;
+
+    width: 100% !important;
+    max-width: 480px !important;
+
+    margin:
+      26px
+      auto
+      0 !important;
+
+    text-align: center !important;
+  }
+
+  .about-hero-description-line {
+    width: 44px !important;
+    height: 1px !important;
+
+    margin:
+      0
+      auto
+      14px !important;
+  }
+
+  .about-hero-description p {
+    font-size: 0.87rem !important;
+    line-height: 1.68 !important;
+    text-align: center !important;
+  }
+
+  .about-hero-footer {
+    display: none !important;
+  }
+
+
+  /* =======================================================
+     SECTION SPACING
+  ======================================================= */
+
+  .about-who,
+  .about-director,
+  .about-mission,
+  .about-values {
+    padding:
+      68px
+      18px !important;
+  }
+
+
+  /* =======================================================
+     WHO WE ARE
+  ======================================================= */
+
+  .about-who-inner {
+    display: grid !important;
+    width: 100% !important;
+
+    grid-template-columns:
+      1fr !important;
+
+    gap: 26px !important;
+
+    text-align: center !important;
+  }
+
+  .about-section-number {
+    display: none !important;
+  }
+
+  .about-who-heading h2 {
+    max-width: 100% !important;
+
+    margin:
+      0
+      auto !important;
+
+    font-size:
+      clamp(
+        2.65rem,
+        12vw,
+        3.3rem
+      ) !important;
+
+    line-height: 0.98 !important;
+
+    text-align: center !important;
+  }
+
+  .about-who-copy {
+    padding-top: 0 !important;
+    text-align: center !important;
+  }
+
+  .about-who-copy p {
+    max-width: 520px !important;
+
+    margin:
+      0
+      auto
+      20px !important;
+
+    font-size: 0.9rem !important;
+    line-height: 1.72 !important;
+
+    text-align: center !important;
+  }
+
+  .about-who-copy .about-who-lead {
+    font-size: 1rem !important;
+  }
+
+  .about-who-visual {
+    width: 100% !important;
+    max-width: 390px !important;
+
+    justify-content: center !important;
+
+    margin:
+      28px
+      auto
+      0 !important;
+  }
+
+  .about-who-visual-image {
+    width: 100% !important;
+    max-width: 360px !important;
+
+    margin:
+      0
+      auto !important;
+  }
+
+  .about-who-signature {
+    justify-content: center !important;
+
+    margin-top:
+      26px !important;
+  }
+
+
+  /* =======================================================
+     DIRECTOR
+  ======================================================= */
+
+  .about-director-inner {
+    display: grid !important;
+
+    width: 100% !important;
+
+    grid-template-columns:
+      1fr !important;
+
+    gap: 36px !important;
+
+    text-align: center !important;
+  }
+
+  .about-director-copy {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    text-align: center !important;
+  }
+
+  .about-director blockquote {
+    max-width: 520px !important;
+
+    margin:
+      0
+      auto !important;
+
+    font-size:
+      clamp(
+        1.9rem,
+        9vw,
+        2.5rem
+      ) !important;
+
+    line-height: 1.04 !important;
+
+    text-align: center !important;
+  }
+
+  .about-director-copy > p {
+    max-width: 520px !important;
+
+    margin:
+      22px
+      auto
+      0 !important;
+
+    font-size: 0.88rem !important;
+
+    text-align: center !important;
+  }
+
+  .about-director-signature {
+    justify-content: center !important;
+
+    margin-top:
+      26px !important;
+  }
+
+  .about-director-visual {
+    width: 100% !important;
+    max-width: 400px !important;
+
+    justify-content: center !important;
+
+    margin:
+      0
+      auto !important;
+  }
+
+  .about-director-image {
+    width: 100% !important;
+    max-width: 400px !important;
+    min-height: 0 !important;
+  }
+
+  .about-director-image img {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+  }
+
+
+  /* =======================================================
+     MISSION
+  ======================================================= */
+
+  .about-mission-inner {
+    width: 100% !important;
+  }
+
+  .about-mission-top {
+    margin-bottom: 30px !important;
+
+    text-align: center !important;
+  }
+
+  .about-mission-layout {
+    display: grid !important;
+
+    grid-template-columns:
+      1fr !important;
+
+    gap: 32px !important;
+  }
+
+  .about-mission-content {
+    text-align: center !important;
+  }
+
+  .about-mission h2 {
+    max-width: 100% !important;
+
+    margin:
+      0
+      auto !important;
+
+    font-size:
+      clamp(
+        2.6rem,
+        12vw,
+        3.3rem
+      ) !important;
+
+    line-height: 0.98 !important;
+
+    text-align: center !important;
+  }
+
+  .about-mission-bottom {
+    display: block !important;
+
+    max-width: 520px !important;
+
+    margin:
+      28px
+      auto
+      0 !important;
+
+    text-align: center !important;
+  }
+
+  .about-mission-bottom > div {
+    width: 44px !important;
+    height: 1px !important;
+
+    margin:
+      0
+      auto
+      14px !important;
+  }
+
+  .about-mission-bottom p {
+    font-size: 0.9rem !important;
+    line-height: 1.7 !important;
+
+    text-align: center !important;
+  }
+
+  .about-mission-visual {
+    width: 100% !important;
+    min-height: 0 !important;
+
+    justify-content: center !important;
+  }
+
+  .about-mission-image {
+    width: 100% !important;
+    max-width: 400px !important;
+
+    margin:
+      0
+      auto !important;
+  }
+
+
+  /* =======================================================
+     VALUES
+  ======================================================= */
+
+  .about-values-heading {
+    flex-direction: column !important;
+
+    align-items: center !important;
+
+    margin-bottom:
+      35px !important;
+
+    gap:
+      12px !important;
+
+    text-align: center !important;
+  }
+
+  .about-values-heading > div {
+    width: 100% !important;
+  }
+
+  .about-values-heading h2 {
+    font-size:
+      clamp(
+        2.6rem,
+        12vw,
+        3.3rem
+      ) !important;
+
+    text-align: center !important;
+  }
+
+  .about-values-big-number {
+    text-align: center !important;
+  }
+
+  .about-values-list {
+    grid-template-columns:
+      1fr !important;
+
+    gap:
+      15px !important;
+  }
+
+  .about-value {
+    min-height: auto !important;
+
+    padding:
+      30px
+      24px !important;
+
+    text-align:
+      center !important;
+  }
+
+  .about-value-icon {
+    margin:
+      0
+      auto
+      24px !important;
+  }
+
+  .about-value h3 {
+    text-align:
+      center !important;
+  }
+
+  .about-value p {
+    text-align:
+      center !important;
+  }
+
+
+  /* =======================================================
+     CHAT TO US
+  ======================================================= */
+
+  .about-closing {
+    padding:
+      58px
+      18px !important;
+  }
+
+  .about-closing-inner {
+    grid-template-columns:
+      1fr !important;
+
+    padding:
+      30px
+      18px !important;
+
+    gap:
+      24px !important;
+
+    text-align:
+      center !important;
+  }
+
+  .about-closing-copy {
+    display: flex !important;
+
+    flex-direction: column !important;
+
+    align-items: center !important;
+  }
+
+  .about-closing-label {
+    justify-content:
+      center !important;
+  }
+
+  .about-closing h2 {
+    font-size:
+      clamp(
+        2.55rem,
+        12vw,
+        3.4rem
+      ) !important;
+
+    text-align:
+      center !important;
+  }
+
+  .about-closing-copy > p {
+    max-width: 470px !important;
+
+    margin:
+      18px
+      auto
+      0 !important;
+
+    text-align:
+      center !important;
+  }
+
+  .about-closing-button,
+  .about-closing-footer a {
+    width:
+      min(
+        100%,
+        300px
+      ) !important;
+
+    margin:
+      0
+      auto !important;
+
+    justify-content:
+      center !important;
+  }
+
+
+  /* =======================================================
+     FOOTER
+  ======================================================= */
+
+  .about-footer {
+    padding:
+      52px
+      18px
+      22px !important;
+
+    text-align:
+      center !important;
+  }
+
+  .about-footer-main {
+    grid-template-columns:
+      1fr !important;
+
+    gap:
+      28px !important;
+  }
+
+  .about-footer-brand,
+  .about-footer-column {
+    align-items:
+      center !important;
+
+    text-align:
+      center !important;
+  }
+
+  .about-footer-brand > p {
+    margin-right:
+      auto !important;
+
+    margin-left:
+      auto !important;
+  }
+
+  .about-footer-links {
+    align-items:
+      center !important;
+  }
+
+  .about-footer-bottom {
+    flex-direction:
+      column !important;
+
+    align-items:
+      center !important;
+
+    justify-content:
+      center !important;
+
+    gap:
+      12px !important;
+
+    text-align:
+      center !important;
+  }
+
+  .about-footer-bottom-links,
+  .about-footer-bottom > div {
+    justify-content:
+      center !important;
+
+    flex-wrap:
+      wrap !important;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 390px) {
+
+  .about-navbar {
+    padding:
+      0
+      12px !important;
+  }
+
+  .about-logo-name {
+    font-size:
+      0.67rem !important;
+  }
+
+  .about-hero-heading h1 {
+    font-size:
+      2.65rem !important;
+  }
+
+  .about-who,
+  .about-director,
+  .about-mission,
+  .about-values {
+    padding:
+      58px
+      15px !important;
+  }
+
+  .about-who-heading h2,
+  .about-mission h2,
+  .about-values-heading h2,
+  .about-closing h2 {
+    font-size:
+      2.45rem !important;
+  }
+
+  .about-director blockquote {
+    font-size:
+      1.85rem !important;
+  }
+}
