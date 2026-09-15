@@ -207,109 +207,45 @@ function Services() {
       {/* =====================================================
           HERO
       ====================================================== */}
+<section
+  className="services-hero"
+  style={{
+    backgroundImage: `url(${apexInterchange})`,
+  }}
+>
 
-      <section className="services-hero">
+  <div className="services-hero-grid"></div>
 
-        <div className="services-hero-grid"></div>
+  <div className="services-hero-glow"></div>
 
-        <div className="services-hero-glow"></div>
+  <div className="services-hero-inner">
 
+    <div className="services-hero-copy services-reveal">
 
-        <div className="services-hero-inner">
+      <div className="services-kicker">
+        Our Services
+      </div>
 
+      <h1>
+        SERVICES
+        <br />
 
-          {/* HERO COPY */}
+        <span>
+          BUILT TO MOVE.
+        </span>
+      </h1>
 
-          <div className="services-hero-copy services-reveal">
+      <p>
+        Traffic engineering, design and temporary traffic
+        management solutions supporting projects from early
+        planning and approvals through to construction and delivery.
+      </p>
 
-            <div className="services-kicker">
-              Traffic Engineering & Design
-            </div>
+    </div>
 
+  </div>
 
-            <h1>
-              SERVICES
-              <br />
-
-              <span>
-                BUILT TO MOVE.
-              </span>
-            </h1>
-
-
-            <p>
-              Traffic engineering, design and temporary traffic
-              management solutions supporting projects from early
-              planning and approvals through to construction and delivery.
-            </p>
-
-
-            <a
-              href="#service-list"
-              className="services-hero-button"
-            >
-              Explore Services
-
-              <span>
-                ↓
-              </span>
-            </a>
-
-          </div>
-
-
-          {/* HERO VISUAL */}
-
-          <div className="services-hero-visual services-reveal">
-
-            <div className="services-system-card">
-
-              <div className="services-system-grid"></div>
-
-
-              <img
-                src={apexInterchange}
-                alt="APEX traffic engineering network"
-              />
-
-
-              <div className="services-system-stat stat-one">
-
-                <small>
-                  PROJECT FLOW
-                </small>
-
-                <strong>
-                  SAFE
-                </strong>
-
-              </div>
-
-
-              <div className="services-system-stat stat-two">
-
-                <small>
-                  NETWORK
-                </small>
-
-                <strong>
-                  READY
-                </strong>
-
-              </div>
-
-
-              <div className="services-system-coordinate">
-                SYD / NSW / TRAFFIC NETWORK
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
+</section>
 
 
       {/* =====================================================
@@ -1202,8 +1138,8 @@ function Services() {
           Contact
         </h3>
 
-        <a href="mailto: harry@apexroadnetwork.com.au">
-          harry@apexroadnetwork.com.au
+        <a href="mailto: info@apexroadnetwork.com.au">
+          info@apexroadnetwork.com.au
         </a>
 
         <a href="tel:+610499516282">

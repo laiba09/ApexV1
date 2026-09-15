@@ -113,8 +113,6 @@ const homeProjects = [
     title: "Macquarie Park Bus Depot",
     category: "Transport Infrastructure",
     image: macquarieProject,
-    client: "Infrastructure for a Sustainable Future",
-    location: "Macquarie Park, NSW",
   },
 
   {
@@ -363,13 +361,7 @@ function App() {
 
         <div className="hero-content reveal">
 
-          <div className="eyebrow">
-
-            <span className="eyebrow-dot"></span>
-
-            Reliable · Safe · Efficient
-
-          </div>
+         
 
 
           <h1>
@@ -397,7 +389,7 @@ function App() {
             >
               Discuss Your Project
 
-              <span className="text-arrow">↗︎</span>
+              <span className="text-arrow"></span>
             </a>
 
 
@@ -415,7 +407,7 @@ function App() {
 
         <div className="hero-bottom reveal">
 
-          <div className="hero-brand">
+          {/* <div className="hero-brand">
 
             <span>
               APEX ROAD NETWORK
@@ -423,7 +415,7 @@ function App() {
 
             <div className="brand-line"></div>
 
-          </div>
+          </div> */}
 
         </div>
 
@@ -582,19 +574,9 @@ function App() {
               </div>
 
 
-              <div className="phone-detail phone-detail-one">
-
-                <span></span>
-
-                TRAFFIC ENGINEERING
-
-              </div>
 
 
-              <div className="phone-detail phone-detail-two">
-                Apex Road Network
-              </div>
-
+            
             </div>
 
 
@@ -641,85 +623,11 @@ function App() {
         {/* =====================================================
             SERVICES GRID
         ====================================================== */}
-
+        
         <div className="services-grid">
 
-
+          
           <article className="service-card reveal">
-
-            <div className="service-number">
-              01
-            </div>
-
-
-            <div className="service-card-content">
-
-              <span className="service-label">
-                Safety
-              </span>
-
-
-              <h3>
-                Road Safety Audits
-              </h3>
-
-
-              <p>
-                Independent road safety audits for infrastructure, road
-                upgrades and development projects, identifying risks at
-                every stage.
-              </p>
-
-            </div>
-
-
-            <div className="service-arrow">
-              <span className="text-arrow">↗︎</span>
-            </div>
-
-          </article>
-
-
-          <article className="service-card reveal">
-
-            <div className="service-number">
-              02
-            </div>
-
-
-            <div className="service-card-content">
-
-              <span className="service-label">
-                Planning
-              </span>
-
-
-              <h3>
-                Traffic Management Plans
-              </h3>
-
-
-              <p>
-                Practical CTMPs and TMPs developed for civil construction,
-                infrastructure works and complex live traffic environments.
-              </p>
-
-            </div>
-
-
-            <div className="service-arrow">
-              <span className="text-arrow">↗︎</span>
-            </div>
-
-          </article>
-
-
-          <article className="service-card reveal">
-
-            <div className="service-number">
-              03
-            </div>
-
 
             <div className="service-card-content">
 
@@ -747,13 +655,70 @@ function App() {
             </div>
 
           </article>
+          <article className="service-card reveal">
+
+            
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Assessment
+              </span>
+
+
+              <h3>
+                Traffic Impact Statements
+              </h3>
+
+
+              <p>
+                Traffic assessments covering access, network performance,
+                vehicle movements and the impacts of proposed developments.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
+        
 
 
           <article className="service-card reveal">
 
-            <div className="service-number">
-              04
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Engineering
+              </span>
+
+              <h3>
+                Traffic Engineering Advice & Design Review
+              </h3>
+
+              <p>
+                Practical traffic engineering advice, technical review and design
+                support for planning, approvals, construction and project delivery.
+              </p>
+
             </div>
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+
+
+
+          <article className="service-card reveal">
+
+           
 
 
             <div className="service-card-content">
@@ -783,45 +748,11 @@ function App() {
           </article>
 
 
-          <article className="service-card reveal">
-
-            <div className="service-number">
-              05
-            </div>
-
-
-            <div className="service-card-content">
-
-              <span className="service-label">
-                Assessment
-              </span>
-
-
-              <h3>
-                Traffic Impact Statements
-              </h3>
-
-
-              <p>
-                Traffic assessments covering access, network performance,
-                vehicle movements and the impacts of proposed developments.
-              </p>
-
-            </div>
-
-
-            <div className="service-arrow">
-              <span className="text-arrow">↗︎</span>
-            </div>
-
-          </article>
+          
 
 
           <article className="service-card reveal">
 
-            <div className="service-number">
-              06
-            </div>
 
 
             <div className="service-card-content">
@@ -839,6 +770,37 @@ function App() {
               <p>
                 Safe and practical access design for construction sites,
                 heavy vehicles, utilities and changing project conditions.
+              </p>
+
+            </div>
+
+
+            <div className="service-arrow">
+              <span className="text-arrow">↗︎</span>
+            </div>
+
+          </article>
+          <article className="service-card reveal">
+
+           
+
+
+            <div className="service-card-content">
+
+              <span className="service-label">
+                Safety
+              </span>
+
+
+              <h3>
+                Road Safety Audits
+              </h3>
+
+
+              <p>
+                Independent road safety audits for infrastructure, road
+                upgrades and development projects, identifying risks at
+                every stage.
               </p>
 
             </div>
@@ -946,7 +908,7 @@ function App() {
               <article className="why-item">
 
                 <span>
-                  01
+                  
                 </span>
 
 
@@ -972,7 +934,7 @@ function App() {
               <article className="why-item">
 
                 <span>
-                  02
+                
                 </span>
 
 
@@ -997,7 +959,7 @@ function App() {
               <article className="why-item">
 
                 <span>
-                  03
+                
                 </span>
 
 
@@ -1110,10 +1072,10 @@ function App() {
 
           <div className="project-overlay"></div>
 
-
+{/* 
           <div className="project-number">
             {homeProjects[0].number}
-          </div>
+          </div> */}
 
 
           <a
@@ -1181,10 +1143,7 @@ function App() {
           <div className="project-overlay"></div>
 
 
-          <div className="project-number">
-            {homeProjects[1].number}
-          </div>
-
+          
 
           <a
             href="/projects"
@@ -1235,11 +1194,6 @@ function App() {
           />
 
           <div className="project-overlay"></div>
-
-
-          <div className="project-number">
-            {homeProjects[2].number}
-          </div>
 
 
           <a
@@ -1463,8 +1417,8 @@ function App() {
               </h3>
 
 
-              <a href="mailto:hello@apexroadnetwork.com.au">
-                harry@apexroadnetwork.com.au
+              <a href="mailto: info@apexroadnetwork.com.au">
+                info@apexroadnetwork.com.au
               </a>
 
 

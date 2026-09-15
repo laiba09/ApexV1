@@ -28,6 +28,10 @@ import clientEire from "./assets/client-eire.png";
 import clientYuin from "./assets/client-yuin.png";
 import clientSMG from "./assets/client-smg.png";
 import clientRoadworx from "./assets/client-roadworx.png";
+import clientAtg from "./assets/client-atg.png";
+import clientCu from "./assets/client-cu.png";
+
+
 
 
 /* =====================================================
@@ -36,7 +40,6 @@ import clientRoadworx from "./assets/client-roadworx.png";
 
 const projects = [
   {
-    number: "02",
     title: "83 Main Road, Heddon Greta",
     category: "Road Infrastructure / Construction",
     image: heddonGretaProject,
@@ -45,7 +48,7 @@ const projects = [
   },
 
   {
-    number: "03",
+
     title: "Golden Hwy, Merriwa",
     category: "Roadworks / Civil Construction",
     image: goldenHwyProject,
@@ -54,7 +57,7 @@ const projects = [
   },
 
   {
-    number: "04",
+
     title: "55 Grandview Drive, Newport",
     category: "Construction Traffic Management",
     image: grandviewProject,
@@ -63,13 +66,14 @@ const projects = [
   },
 
   {
-    number: "05",
+  
     title: "Taronga Zoo — Athol Wharf Road",
     category: "Roadworks / Traffic Management",
     image: tarongaProject,
     description:
       "Traffic management support for works along Athol Wharf Road, maintaining safe access through a busy and constrained transport corridor.",
   },
+  
 ];
 
 
@@ -137,11 +141,20 @@ const partners = [
     name: "Scorpian Management Group",
     logo: clientSMG,
   },
-
   {
-    name: "Roadworx",
-    logo: clientRoadworx,
-  },
+  name: "Complete Urban",
+  logo: clientCu,
+},
+
+{
+  name: "Australian Traffic Group",
+  logo: clientAtg,
+},
+{
+  name: "Roadworx",
+  logo: clientRoadworx,
+},
+
 ];
 
 
@@ -360,7 +373,7 @@ function Projects() {
 
           <div className="projectspage-hero-top projectspage-reveal">
 
-            <div className="projectspage-hero-location">
+            <div className="projectspage-hero-label">
               Our Projects
             </div>
 
@@ -476,21 +489,6 @@ function Projects() {
 
 
     {/* BOTTOM LINE */}
-
-    <div className="projectspage-partners-bottom projectspage-reveal">
-
-      <span>
-        APEX ROAD NETWORK
-      </span>
-
-      <div></div>
-
-      <span>
-        NSW / AUSTRALIA
-      </span>
-
-    </div>
-
   </div>
 
 </section>
@@ -538,38 +536,14 @@ function Projects() {
               <div className="projectspage-featured-image-overlay"></div>
 
 
-              <div className="projectspage-featured-image-label">
-
-                <span>
-                  APEX / PROJECT 01
-                </span>
-
-                <span>
-                  TRANSPORT INFRASTRUCTURE
-                </span>
-
-              </div>
+              
 
             </div>
 
 
             <div className="projectspage-featured-content">
 
-              <div className="projectspage-project-meta">
-
-                <span>
-                  Infrastructure
-                </span>
-
-                <span>
-                  Traffic Management
-                </span>
-
-                <span>
-                  Macquarie Park NSW
-                </span>
-
-              </div>
+              
 
 
               <h3>
@@ -674,7 +648,6 @@ function Projects() {
             {projects.map((project) => (
 
               <article
-                key={project.number}
                 className="projectspage-card projectspage-reveal"
               >
 
@@ -686,9 +659,6 @@ function Projects() {
                   />
 
 
-                  <span className="projectspage-card-number">
-                    {project.number}
-                  </span>
 
                 </div>
 
@@ -884,8 +854,8 @@ function Projects() {
           Contact
         </h3>
 
-        <a href="mailto:harry@apexroadnetwork.com.au">
-          harry@apexroadnetwork.com.au
+        <a href="mailto:info@apexroadnetwork.com.au">
+          info@apexroadnetwork.com.au
         </a>
 
         <a href="tel:+610499516282">

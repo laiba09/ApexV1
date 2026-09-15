@@ -74,17 +74,6 @@ img {
   max-width: 100%;
 }
 
-.home-page {
-  width: 100%;
-  min-height: 100vh;
-
-  overflow-x: hidden;
-  overflow-y: visible;
-
-  background:
-    var(--black);
-}
-
 
 html,
 body {
@@ -92,15 +81,7 @@ body {
   max-width: 100%;
 }
 
-.home-page {
-  width: 100%;
-  max-width: 100%;
 
-  min-height: 100vh;
-
-  overflow-x: hidden;
-  overflow-y: visible;
-}
 /* =========================================================
    NAVBAR
 ========================================================= */
@@ -604,7 +585,6 @@ body {
 
   align-items: center;
 
-  overflow: hidden;
 
   padding:
     150px
@@ -5169,4 +5149,1091 @@ span:last-child {
     justify-content: center;
     flex-wrap: wrap;
   }
+}
+
+/* =========================================================
+   APEX — FINAL MOBILE POLISH OVERRIDES
+   Keep this block LAST in App.css.
+   Desktop/laptop styles above remain unchanged.
+========================================================= */
+
+@media (max-width: 700px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  body {
+    min-width: 0;
+  }
+
+  .home-page {
+    width: 100%;
+    overflow-x: clip;
+  }
+
+  /* -------------------------
+     NAVBAR
+  ------------------------- */
+  .navbar {
+    position: absolute;
+    min-height: 72px;
+    padding: 0 18px;
+    background: rgba(13, 19, 23, 0.97);
+  }
+
+  .home-logo-wrap {
+    min-width: 0;
+    gap: 9px;
+  }
+
+  .home-navbar-logo-image {
+    width: 42px;
+    height: 42px;
+  }
+
+  .home-logo-name {
+    max-width: 175px;
+    overflow: hidden;
+    font-size: 0.82rem;
+    letter-spacing: 0.055em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Contact is inside the opened mobile menu already. */
+  .nav-button {
+    display: none;
+  }
+
+  .mobile-grid-button {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    margin-left: 12px;
+    border-radius: 2px;
+    background: rgba(109, 168, 120, 0.04);
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    width: 100%;
+    max-height: 0;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    padding: 0 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(13, 19, 23, 0.99);
+    gap: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav-links.nav-links-open {
+    max-height: 430px;
+    padding: 12px 20px 20px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links a {
+    width: 100%;
+    padding: 17px 2px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.72rem;
+    letter-spacing: 0.13em;
+    text-align: left;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: 0;
+  }
+
+  .nav-links a::after {
+    display: none;
+  }
+
+  .nav-links a.active,
+  .nav-links a:hover {
+    color: var(--accent-light);
+  }
+
+  /* -------------------------
+     HERO
+  ------------------------- */
+  .hero {
+    min-height: auto;
+    padding: 118px 20px 72px;
+    align-items: flex-start;
+    background-position: 68% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(13, 19, 23, 0.99) 0%,
+        rgba(13, 19, 23, 0.96) 54%,
+        rgba(13, 19, 23, 0.78) 100%
+      ),
+      linear-gradient(
+        180deg,
+        rgba(13, 19, 23, 0.08) 0%,
+        rgba(13, 19, 23, 0.22) 52%,
+        rgba(13, 19, 23, 0.9) 100%
+      );
+  }
+
+  .hero-grid {
+    background-size: 64px 64px;
+    opacity: 0.025;
+  }
+
+  .hero-content {
+    width: 100%;
+    max-width: 520px;
+  }
+
+  .eyebrow {
+    margin-bottom: 18px;
+    font-size: 0.64rem;
+    gap: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .eyebrow-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .hero h1 {
+    max-width: 100%;
+    font-size: clamp(2.75rem, 12.5vw, 4rem);
+    letter-spacing: -0.035em;
+    line-height: 0.96;
+  }
+
+  .hero-description {
+    max-width: 36rem;
+    margin-top: 22px;
+    font-size: 0.94rem;
+    line-height: 1.68;
+  }
+
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+    margin-top: 27px;
+    gap: 10px;
+  }
+
+  .primary-button,
+  .secondary-button {
+    width: 100%;
+    min-height: 51px;
+    padding: 0 18px;
+    font-size: 0.69rem;
+  }
+
+  .hero-bottom {
+    display: none;
+  }
+
+  /* -------------------------
+     TRUSTED BY
+  ------------------------- */
+  .clients-banner {
+    padding: 31px 0 34px;
+  }
+
+  .clients-banner-heading {
+    width: calc(100% - 40px);
+    margin-bottom: 23px;
+  }
+
+  .clients-banner-kicker {
+    font-size: 1.1rem;
+    gap: 10px;
+  }
+
+  .clients-banner-kicker::before,
+  .clients-banner-kicker::after {
+    width: 25px;
+  }
+
+  .clients-banner-heading p {
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
+
+  .client-logo-card {
+    width: 170px;
+    height: 82px;
+    padding: 13px 17px;
+  }
+
+  .clients-slider-track {
+    gap: 12px;
+  }
+
+  /* -------------------------
+     SHARED SECTION SPACING
+  ------------------------- */
+  .services-section,
+  .why-section,
+  .projects-section,
+  .cta-section {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+
+  .services-section {
+    padding-top: 68px;
+    padding-bottom: 72px;
+  }
+
+  .why-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .projects-section {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .cta-section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .services-eyebrow,
+  .why-eyebrow,
+  .projects-eyebrow,
+  .cta-eyebrow {
+    margin-bottom: 16px;
+    justify-content: center;
+    font-size: 0.65rem;
+    gap: 9px;
+    letter-spacing: 0.12em;
+  }
+
+  .services-eyebrow span,
+  .why-eyebrow span,
+  .projects-eyebrow span,
+  .cta-eyebrow span {
+    width: 28px;
+  }
+
+  /* -------------------------
+     SERVICES
+  ------------------------- */
+  .services-heading-row {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .services-header-content {
+    order: 1;
+    align-items: center;
+    text-align: center;
+  }
+
+  .services-phone-visual {
+    order: 2;
+    min-height: 285px;
+    margin-top: 4px;
+  }
+
+  .phone-interactive {
+    width: min(72%, 260px);
+    transform: none !important;
+  }
+
+  .phone-glow {
+    width: 250px;
+    height: 250px;
+    filter: blur(70px);
+  }
+
+  .phone-detail-one,
+  .phone-detail-two {
+    display: none;
+  }
+
+  .services-header-content h2,
+  .why-section-left h2,
+  .projects-header h2 {
+    font-size: clamp(2.75rem, 12.5vw, 3.8rem);
+    line-height: 0.96;
+    text-align: center;
+  }
+
+  .services-header-content > p {
+    max-width: 520px;
+    margin: 20px auto 0;
+    font-size: 0.91rem;
+    line-height: 1.7;
+    text-align: center;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    margin-top: 36px;
+    gap: 12px;
+  }
+
+  .service-card {
+    min-height: 0;
+    padding: 20px;
+  }
+
+  .service-card-content h3 {
+    font-size: 1.45rem;
+  }
+
+  .service-card-content p {
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .services-link-wrap {
+    margin-top: 30px;
+  }
+
+  /* -------------------------
+     WHY APEX
+  ------------------------- */
+  .why-section-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .why-section-left {
+    align-items: center;
+  }
+
+  .why-visual-wrap {
+    width: 100%;
+    min-height: 210px;
+    margin-top: 22px;
+  }
+
+  .why-visual {
+    width: min(88%, 380px);
+  }
+
+  .why-section-right {
+    padding-top: 0;
+  }
+
+  .why-intro {
+    margin-bottom: 24px;
+    font-size: 0.92rem;
+    line-height: 1.72;
+    text-align: center;
+  }
+
+  .why-item {
+    grid-template-columns: 30px 1fr;
+    padding: 21px 0;
+    gap: 12px;
+    text-align: left;
+  }
+
+  .why-item h3 {
+    font-size: 1.25rem;
+  }
+
+  .why-item p {
+    font-size: 0.85rem;
+    line-height: 1.62;
+  }
+
+  .why-button {
+    width: 100%;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  /* -------------------------
+     PROJECTS
+  ------------------------- */
+  .projects-header {
+    display: block;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .projects-header > p {
+    max-width: 520px;
+    margin: 18px auto 0;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  .projects-showcase {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .project-showcase-main,
+  .project-showcase-small {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .project-showcase-main .project-showcase-image,
+  .project-showcase-small .project-showcase-image {
+    height: 215px;
+  }
+
+  .project-showcase-content,
+  .project-showcase-small .project-showcase-content {
+    min-height: 0;
+    padding: 19px;
+  }
+
+  .project-showcase-content h3,
+  .project-showcase-small .project-showcase-content h3 {
+    font-size: clamp(1.42rem, 6.5vw, 1.8rem);
+  }
+
+  .project-showcase-content p,
+  .project-showcase-small .project-showcase-content p {
+    font-size: 0.84rem;
+    line-height: 1.62;
+  }
+
+  .project-showcase-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 18px;
+    gap: 6px;
+  }
+
+  .project-showcase-meta span:last-child {
+    text-align: left;
+  }
+
+  .projects-footer {
+    padding-top: 29px;
+  }
+
+  /* -------------------------
+     CTA
+  ------------------------- */
+  .cta-inner {
+    grid-template-columns: 1fr;
+    padding: 28px 20px;
+    gap: 25px;
+    text-align: center;
+  }
+
+  .cta-copy {
+    align-items: center;
+  }
+
+  .cta-copy h2 {
+    font-size: clamp(2.8rem, 13vw, 3.8rem);
+    line-height: 0.96;
+    text-align: center;
+  }
+
+  .cta-copy p {
+    max-width: 500px;
+    margin: 18px auto 0;
+    font-size: 0.9rem;
+    line-height: 1.68;
+    text-align: center;
+  }
+
+  .cta-button {
+    width: 100%;
+    min-height: 52px;
+    justify-content: center;
+  }
+
+  /* -------------------------
+     FOOTER
+  ------------------------- */
+  .footer {
+    padding: 56px 20px 24px;
+    text-align: center;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .footer-brand,
+  .footer-column {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    max-width: 420px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .footer-links {
+    align-items: center;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .footer-bottom-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 420px) {
+  .navbar {
+    padding: 0 14px;
+  }
+
+  .home-navbar-logo-image {
+    width: 38px;
+    height: 38px;
+  }
+
+  .home-logo-name {
+    max-width: 150px;
+    font-size: 0.72rem;
+  }
+
+  .hero {
+    padding: 108px 17px 64px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 12.6vw, 3.35rem);
+  }
+
+  .services-section,
+  .why-section,
+  .projects-section,
+  .cta-section {
+    padding-right: 17px;
+    padding-left: 17px;
+  }
+
+  .services-header-content h2,
+  .why-section-left h2,
+  .projects-header h2,
+  .cta-copy h2 {
+    font-size: clamp(2.55rem, 12.5vw, 3.3rem);
+  }
+
+  .services-phone-visual {
+    min-height: 245px;
+  }
+
+  .phone-interactive {
+    width: min(68%, 225px);
+  }
+
+  .project-showcase-main .project-showcase-image,
+  .project-showcase-small .project-showcase-image {
+    height: 195px;
+  }
+}
+
+
+
+
+.hero {
+  min-height: 100svh;
+  height: 100svh;
+  box-sizing: border-box;
+}
+
+/* =========================================================
+   SCROLL FIX — ONE PAGE SCROLLBAR ONLY
+   Keep this block LAST in App.css.
+========================================================= */
+
+html {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  overflow-x: clip !important;
+  overflow-y: auto !important;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: clip !important;
+  overflow-y: visible !important;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow: visible !important;
+}
+
+.home-page {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  overflow: visible;
+}
+
+.hero {
+  width: 100%;
+  min-height: 100svh;
+  height: auto;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+/* =========================================================
+   WHY CHOOSE APEX — CLEANER OVERRIDE
+========================================================= */
+
+.why-section {
+  padding:
+    clamp(90px, 7vw, 120px)
+    clamp(24px, 7vw, 110px);
+
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   TWO COLUMN LAYOUT
+========================================================= */
+
+.why-section-inner {
+  display: grid;
+
+  width: min(1280px, 100%);
+
+  margin: 0 auto;
+
+  grid-template-columns:
+    minmax(0, 0.92fr)
+    minmax(0, 1.08fr);
+
+  align-items: start;
+
+  gap: clamp(60px, 7vw, 105px);
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.why-section-left {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+
+.why-section-left h2 {
+  max-width: 520px;
+
+  margin: 0;
+
+  line-height: 0.92;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.why-visual-wrap {
+  width: 100%;
+
+  min-height: 0;
+
+  margin-top: 34px;
+
+  display: block;
+}
+
+
+.why-visual {
+  width: 100%;
+
+  max-width: 560px;
+
+  overflow: hidden;
+
+  border-radius: 2px;
+
+  background: #eef1ed;
+
+  box-shadow:
+    0 16px 38px
+    rgba(16, 24, 32, 0.08);
+}
+
+
+.why-visual-image {
+  display: block;
+
+  width: 100%;
+  height: 340px;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transform: scale(1.01);
+
+  transition:
+    transform 0.45s ease;
+}
+
+
+.why-visual:hover
+.why-visual-image {
+  transform: scale(1.025);
+}
+
+
+/* remove old glow if it still exists */
+.why-visual-glow {
+  display: none !important;
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.why-section-right {
+  display: flex;
+
+  flex-direction: column;
+
+  padding-top: 18px;
+}
+
+
+.why-intro {
+  max-width: 760px;
+
+  margin-bottom: 30px;
+
+  color: #536675;
+
+  font-size: 0.98rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.why-list {
+  width: 100%;
+
+  border-top:
+    1px solid
+    rgba(16, 24, 32, 0.12);
+}
+
+
+.why-item {
+  display: block;
+
+  padding:
+    28px
+    0;
+
+  border-bottom:
+    1px solid
+    rgba(16, 24, 32, 0.12);
+}
+
+
+/* removes the empty number/icon column */
+.why-item > span {
+  display: none;
+}
+
+
+.why-item h3 {
+  margin: 0 0 9px;
+
+  color: #101820;
+
+  font-family:
+    "Oswald",
+    sans-serif;
+
+  font-size:
+    clamp(1.45rem, 1.7vw, 1.85rem);
+
+  font-weight: 500;
+
+  line-height: 1.1;
+
+  text-transform: uppercase;
+}
+
+
+.why-item p {
+  max-width: 700px;
+
+  margin: 0;
+
+  color: #607382;
+
+  font-size: 0.94rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   BUTTON — CENTERED
+========================================================= */
+
+.why-button {
+  display: inline-flex;
+
+  min-width: 245px;
+  min-height: 54px;
+
+  align-items: center;
+  justify-content: center;
+
+  align-self: center;
+
+  margin:
+    32px
+    auto
+    0;
+
+  padding:
+    0
+    28px;
+
+  border:
+    1px solid
+    #9fbd9f;
+
+  background:
+    #ffffff;
+
+  color:
+    #101820;
+
+  font-size:
+    0.72rem;
+
+  font-weight:
+    700;
+
+  gap:
+    14px;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.why-button:hover {
+  border-color:
+    #9fbd9f;
+
+  background:
+    #9fbd9f;
+
+  color:
+    #101820;
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .why-section-inner {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(0, 1.1fr);
+
+    gap:
+      48px;
+  }
+
+
+  .why-visual-image {
+    height:
+      300px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 760px) {
+
+  .why-section {
+    padding:
+      72px
+      20px;
+  }
+
+
+  .why-section-inner {
+    grid-template-columns:
+      1fr;
+
+    gap:
+      42px;
+  }
+
+
+  .why-section-left {
+    align-items:
+      center;
+
+    text-align:
+      center;
+  }
+
+
+  .why-section-left h2 {
+    max-width:
+      520px;
+
+    text-align:
+      center;
+  }
+
+
+  .why-eyebrow {
+    justify-content:
+      center;
+  }
+
+
+  .why-visual-wrap {
+    margin-top:
+      28px;
+  }
+
+
+  .why-visual {
+    max-width:
+      620px;
+
+    margin:
+      0 auto;
+  }
+
+
+  .why-visual-image {
+    height:
+      280px;
+  }
+
+
+  .why-section-right {
+    padding-top:
+      0;
+  }
+
+
+  .why-intro {
+    text-align:
+      center;
+  }
+
+
+  .why-item {
+    padding:
+      24px
+      0;
+
+    text-align:
+      left;
+  }
+
+
+  .why-button {
+    width:
+      min(100%, 310px);
+
+    align-self:
+      center;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .why-visual-image {
+    height:
+      230px;
+  }
+
+
+  .why-button {
+    width:
+      100%;
+
+    min-width:
+      0;
+  }
+
 }

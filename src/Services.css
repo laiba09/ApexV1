@@ -3827,3 +3827,452 @@
     flex-wrap: wrap;
   }
 }
+
+/* =========================================================
+   SERVICES HERO — MATCH ABOUT / PROJECTS WITH IMAGE
+==\======================================================= */
+/* =========================================================
+   FINAL UNIFIED APEX HERO — SERVICES
+   MATCHES PROJECTS HERO
+========================================================= */
+
+.services-hero {
+  position: relative !important;
+
+  height: 575px !important;
+  min-height: 575px !important;
+
+  padding: 92px 0 0 !important;
+
+  overflow: hidden !important;
+
+  background-color: #11181c !important;
+
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: 68% center !important;
+
+  color: #ffffff !important;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY — SAME STYLE AS PROJECTS
+========================================================= */
+
+.services-hero::after {
+  position: absolute !important;
+
+  z-index: 0 !important;
+
+  inset: 92px 0 0 !important;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(17, 24, 28, 1) 0%,
+      rgba(17, 24, 28, 0.99) 28%,
+      rgba(17, 24, 28, 0.93) 45%,
+      rgba(17, 24, 28, 0.65) 64%,
+      rgba(17, 24, 28, 0.26) 82%,
+      rgba(17, 24, 28, 0.12) 100%
+    ) !important;
+
+  content: "";
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   SUBTLE GRID
+========================================================= */
+
+.services-hero-grid {
+  position: absolute !important;
+
+  z-index: 1 !important;
+
+  inset: 92px 0 0 !important;
+
+  opacity: 0.025 !important;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    ) !important;
+
+  background-size: 92px 92px !important;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   REMOVE OLD SERVICES HERO ELEMENTS
+========================================================= */
+
+.services-hero-glow,
+.services-hero-visual,
+.services-system-card,
+.services-system-stat {
+  display: none !important;
+}
+
+
+/* =========================================================
+   INNER CONTAINER
+   SAME WIDTH / HEIGHT / TOP SPACING AS PROJECTS
+========================================================= */
+
+.services-hero-inner {
+  position: relative !important;
+
+  z-index: 2 !important;
+
+  display: block !important;
+
+  width:
+    min(
+      1280px,
+      calc(100% - 48px)
+    ) !important;
+
+  height:
+    calc(575px - 92px) !important;
+
+  margin:
+    0 auto !important;
+
+  padding:
+    50px 0 0 !important;
+}
+
+
+/* =========================================================
+   HERO COPY
+========================================================= */
+
+.services-hero-copy {
+  position: relative !important;
+
+  z-index: 3 !important;
+
+  max-width: 760px !important;
+}
+
+
+/* =========================================================
+   EYEBROW — SAME AS PROJECTS
+========================================================= */
+
+.services-kicker {
+  display: flex !important;
+
+  align-items: center !important;
+
+  margin:
+    0 0 42px !important;
+
+  color:
+    #9fbd9f !important;
+
+  font-size:
+    0.69rem !important;
+
+  font-weight:
+    700 !important;
+
+  gap:
+    14px !important;
+
+  letter-spacing:
+    0.15em !important;
+
+  text-transform:
+    uppercase !important;
+}
+
+
+.services-kicker::before {
+  width:
+    40px !important;
+
+  height:
+    1px !important;
+
+  flex-shrink:
+    0 !important;
+
+  background:
+    #9fbd9f !important;
+
+  content:
+    "" !important;
+}
+
+
+/* =========================================================
+   HEADING — EXACT SAME SCALE AS PROJECTS
+========================================================= */
+
+.services-hero-copy h1 {
+  max-width:
+    760px !important;
+
+  margin:
+    0 !important;
+
+  color:
+    #f7f8f7 !important;
+
+  font-family:
+    "Oswald",
+    sans-serif !important;
+
+  font-size:
+    clamp(
+      3.8rem,
+      5.15vw,
+      5.5rem
+    ) !important;
+
+  font-weight:
+    500 !important;
+
+  line-height:
+    0.91 !important;
+
+  letter-spacing:
+    -0.045em !important;
+
+  text-transform:
+    uppercase !important;
+}
+
+
+.services-hero-copy h1 span {
+  color:
+    #9fbd9f !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION — SAME STRUCTURE AS PROJECTS
+========================================================= */
+
+.services-hero-copy > p {
+  position:
+    relative !important;
+
+  max-width:
+    650px !important;
+
+  margin:
+    32px 0 0 !important;
+
+  padding-left:
+    73px !important;
+
+  color:
+    rgba(255, 255, 255, 0.72) !important;
+
+  font-size:
+    0.95rem !important;
+
+  line-height:
+    1.75 !important;
+}
+
+
+/* green line beside description */
+
+.services-hero-copy > p::before {
+  position:
+    absolute;
+
+  top:
+    11px;
+
+  left:
+    0;
+
+  width:
+    55px;
+
+  height:
+    1px;
+
+  background:
+    #7fa886;
+
+  content:
+    "";
+}
+
+
+/* =========================================================
+   REMOVE OLD BUTTON STYLING IF STILL PRESENT
+========================================================= */
+
+.services-hero-button {
+  display:
+    none !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .services-hero {
+    background-position:
+      72% center !important;
+  }
+
+
+  .services-hero-copy {
+    max-width:
+      700px !important;
+  }
+
+
+  .services-hero-copy h1 {
+    font-size:
+      clamp(
+        3.5rem,
+        8vw,
+        4.8rem
+      ) !important;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .services-hero {
+    height:
+      540px !important;
+
+    min-height:
+      540px !important;
+
+    background-position:
+      72% center !important;
+  }
+
+
+  .services-hero::after {
+    background:
+      linear-gradient(
+        90deg,
+        rgba(17, 24, 28, 0.98) 0%,
+        rgba(17, 24, 28, 0.95) 60%,
+        rgba(17, 24, 28, 0.75) 100%
+      ) !important;
+  }
+
+
+  .services-hero-inner {
+    height:
+      calc(540px - 92px) !important;
+
+    padding-top:
+      48px !important;
+  }
+
+
+  .services-kicker {
+    margin-bottom:
+      34px !important;
+  }
+
+
+  .services-hero-copy {
+    max-width:
+      100% !important;
+  }
+
+
+  .services-hero-copy h1 {
+    font-size:
+      clamp(
+        3rem,
+        13vw,
+        4.2rem
+      ) !important;
+
+    line-height:
+      0.92 !important;
+  }
+
+
+  .services-hero-copy > p {
+    max-width:
+      100% !important;
+
+    padding-left:
+      0 !important;
+
+    font-size:
+      0.9rem !important;
+  }
+
+
+  .services-hero-copy > p::before {
+    display:
+      none;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .services-hero-inner {
+    width:
+      calc(100% - 34px) !important;
+  }
+
+
+  .services-kicker {
+    font-size:
+      0.62rem !important;
+  }
+
+
+  .services-hero-copy h1 {
+    font-size:
+      clamp(
+        2.7rem,
+        14vw,
+        3.7rem
+      ) !important;
+  }
+
+
+  .services-hero-copy > p {
+    font-size:
+      0.86rem !important;
+  }
+
+}

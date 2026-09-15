@@ -239,7 +239,7 @@ function Contact() {
 
               <div className="contact-item-content">
                 <span>Email</span>
-                <h2>harry@apexroadnetwork.com.au</h2>
+                <h2>info@apexroadnetwork.com.au</h2>
               </div>
 
               <div className="contact-arrow"><span className="text-arrow">↗︎</span></div>
@@ -364,8 +364,8 @@ function Contact() {
           Contact
         </h3>
 
-        <a href="mailto:harry@apexroadnetwork.com.au">
-          harry@apexroadnetwork.com.au
+        <a href="mailto:info@apexroadnetwork.com.au">
+          info@apexroadnetwork.com.au
         </a>
 
         <a href="tel:+610499516282">

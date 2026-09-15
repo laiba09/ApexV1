@@ -1,6 +1,12 @@
+/* =========================================
+   GLOBAL PAGE SCROLL
+========================================= */
+
 html {
   width: 100%;
   min-height: 100%;
+  margin: 0;
+  padding: 0;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -8,17 +14,17 @@ html {
 
 body {
   width: 100%;
-  min-height: 100%;
-
+  min-height: 100vh;
   margin: 0;
   padding: 0;
 
-  overflow: visible;
+  overflow-x: clip;
+  overflow-y: visible;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
 
-  overflow: visible !important;
+  overflow: visible;
 }

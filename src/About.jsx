@@ -3,9 +3,9 @@ import "./About.css";
 
 import apexNavLogo from "./assets/apex-nav-logo.png";
 import aboutHero from "./assets/about-apex-hero.png";
-import apexInterchange from "./assets/Night.png";
-import missionRoad from "./assets/Intersection.png";
-import constructionVisual from "./assets/truck.png";
+import apexInterchange from "./assets/Night1.png";
+import missionRoad from "./assets/Bill.png";
+import constructionVisual from "./assets/car2.png";
 
 
 function About() {
@@ -468,7 +468,7 @@ function About() {
             </p>
 
 
-            <p>
+            {/* <p>
               At Apex Road Network, our philosophy is simple:
               <br />
               <br />
@@ -480,7 +480,7 @@ function About() {
               We are proud to support our clients across Australia and look
               forward to building long-term partnerships through reliable
               advice, innovative solutions and consistently high standards.
-            </p>
+            </p> */}
 
 
             <div className="about-director-signature">
@@ -905,8 +905,8 @@ function About() {
               </h3>
 
 
-              <a href="mailto:harry@apexroadnetwork.com.au">
-                harry@apexroadnetwork.com.au
+              <a href="mailto:info@apexroadnetwork.com.au">
+                info@apexroadnetwork.com.au
               </a>
 
 
