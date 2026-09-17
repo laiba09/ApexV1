@@ -8,8 +8,8 @@ import "./App.css";
 
 import truckHero from "./assets/truck-hero.png";
 
-import apexPhone from "./assets/apex-phone.png";
-import apexInterchange from "./assets/apex-interchange.png";
+import apexPhone from "./assets/stagingabout.png";
+import apexInterchange from "./assets/2_macquarie_park_bus_depot.png";
 import apexNavLogo from "./assets/apex-nav-logo.png";
 
 
@@ -18,9 +18,9 @@ import apexNavLogo from "./assets/apex-nav-logo.png";
 ========================================================= */
 
 import heddonGretaProject from "./assets/1_heddon_greta.png";
-import macquarieProject from "./assets/2_macquarie_park_bus_depot.png";
+import macquarieProject from "./assets/2_macquarie_park_bus_depot1.png";
 import tarongaProject from "./assets/3_taronga_zoo_mosman.png";
-import goldenHwyProject from "./assets/4_golden_hwy_meriwa.png";
+import goldenHwyProject from "./assets/4_golden_hwy_meriwa2.png";
 import grandviewProject from "./assets/5_grandview_drive_newport.png";
 
 
@@ -872,20 +872,25 @@ function App() {
 
             <div className="why-visual-wrap">
 
-              <div className="why-visual-glow"></div>
+            <div className="why-visual-frame">
 
+              <div className="why-visual-badge">
+                Macquarie Park Bus Depot
+              </div>
 
               <div className="why-visual">
-
                 <img
                   src={apexInterchange}
-                  alt="APEX Road Network highway interchange illustration"
+                  alt="APEX Road Network project environment"
                   className="why-visual-image"
                 />
 
+                <div className="why-visual-overlay"></div>
               </div>
 
             </div>
+
+          </div>
 
           </div>
 
@@ -997,6 +1002,8 @@ function App() {
         </div>
 
       </section>
+
+      
 
 {/* =====================================================
     RECENT PROJECTS
@@ -1255,6 +1262,76 @@ function App() {
   </div>
 
 </section>
+
+{/* =====================================================
+    APEX QUOTE
+===================================================== */}
+  <section
+    className="apex-quote-section"
+    onMouseMove={(e) => {
+      const section = e.currentTarget;
+      const rect = section.getBoundingClientRect();
+
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+
+      const rotateY = ((x - centerX) / centerX) * 3;
+      const rotateX = ((centerY - y) / centerY) * 3;
+
+      const moveX = ((x - centerX) / centerX) * 12;
+      const moveY = ((y - centerY) / centerY) * 8;
+
+      section.style.setProperty("--mouse-x", `${x}px`);
+      section.style.setProperty("--mouse-y", `${y}px`);
+      section.style.setProperty("--rotate-x", `${rotateX}deg`);
+      section.style.setProperty("--rotate-y", `${rotateY}deg`);
+      section.style.setProperty("--move-x", `${moveX}px`);
+      section.style.setProperty("--move-y", `${moveY}px`);
+    }}
+    onMouseLeave={(e) => {
+      const section = e.currentTarget;
+
+      section.style.setProperty("--rotate-x", "0deg");
+      section.style.setProperty("--rotate-y", "0deg");
+      section.style.setProperty("--move-x", "0px");
+      section.style.setProperty("--move-y", "0px");
+    }}
+  >
+    <div className="apex-quote-grid"></div>
+
+    <div className="apex-quote-spotlight"></div>
+
+    <div className="apex-quote-orb orb-one"></div>
+    <div className="apex-quote-orb orb-two"></div>
+
+    <div className="apex-quote-inner">
+
+      <div className="apex-quote-top">
+        <span className="apex-quote-line"></span>
+
+        <span className="apex-quote-label">
+          Our Motto
+        </span>
+
+        <span className="apex-quote-line"></span>
+      </div>
+
+      <div className="apex-quote-text">
+
+        <h2 className="quote-line-one">
+          PRECISION IN PLANNING,
+        </h2>
+
+        <h2 className="quote-line-two">
+          SAFETY IN EVERY JOURNEY.
+        </h2>
+
+      </div>
+    </div>
+  </section>
       {/* =====================================================
           CONTACT CTA
       ====================================================== */}

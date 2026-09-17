@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import "./About.css";
 
 import apexNavLogo from "./assets/apex-nav-logo.png";
-import aboutHero from "./assets/about-apex-hero.png";
-import apexInterchange from "./assets/Night1.png";
+import aboutHero from "./assets/4_golden_hwy_meriwa.png";
+import apexInterchange from "./assets/staging.png";
 import missionRoad from "./assets/Bill.png";
-import constructionVisual from "./assets/car2.png";
+import constructionVisual from "./assets/world.png";
 
 
 function About() {
@@ -450,14 +450,14 @@ function About() {
             </p>
 
 
-            <p>
+            {/* <p>
               We understand that effective traffic management is more than
               compliance — it is about creating solutions that are safe,
               practical, efficient and tailored to the unique requirements
               of each project. We work collaboratively with our clients,
               contractors, authorities and project teams to minimise
               disruption, manage risk and keep projects moving.
-            </p>
+            </p> */}
 
 
             <p>

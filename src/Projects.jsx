@@ -5,9 +5,9 @@ import apexNavLogo from "./assets/apex-nav-logo.png";
 import projectHero from "./assets/Project.png";
 
 import heddonGretaProject from "./assets/1_heddon_greta.png";
-import macquarieProject from "./assets/2_macquarie_park_bus_depot.png";
+import macquarieProject from "./assets/2_macquarie_park_bus_depot1.png";
 import tarongaProject from "./assets/3_taronga_zoo_mosman.png";
-import goldenHwyProject from "./assets/4_golden_hwy_meriwa.png";
+import goldenHwyProject from "./assets/4_golden_hwy_meriwa2.png";
 import grandviewProject from "./assets/5_grandview_drive_newport.png";
 
 
