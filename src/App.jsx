@@ -1428,20 +1428,24 @@ function App() {
 
               <nav className="footer-links">
 
-                <a href="/services">
-                  Traffic Staging Design
+                <a href="/">
+                  Home
+                </a>
+
+                <a href="/about">
+                  About
                 </a>
 
                 <a href="/services">
-                  Traffic Modelling
+                  Services
                 </a>
 
-                <a href="/services">
-                  Traffic Impact Statments
+                <a href="/projects">
+                  Projects
                 </a>
 
-                <a href="/services">
-                  Traffic Guidance Schemes
+                <a href="/contact">
+                  Contact
                 </a>
 
               </nav>
@@ -1459,19 +1463,19 @@ function App() {
               <div className="footer-links">
 
                 <a href="/services">
-                  Traffic Management Plans
+                  Traffic Staging Design
                 </a>
 
                 <a href="/services">
-                  Traffic Control Plans
+                  Traffic Modelling
                 </a>
 
                 <a href="/services">
-                  Road Safety Audits
+                  Traffic Impact Statments
                 </a>
 
                 <a href="/services">
-                  Traffic Impact Assessments
+                  Traffic Guidance Schemes
                 </a>
 
               </div>
