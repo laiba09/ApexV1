@@ -4431,3 +4431,12 @@
       0.86rem !important;
   }
 }
+/* FIX GAP BETWEEN NAVBAR + SERVICES HERO */
+.services-hero::after {
+  inset: 0 !important;
+}
+
+/* keep hero content below navbar */
+.services-hero {
+  padding-top: 92px !important;
+}

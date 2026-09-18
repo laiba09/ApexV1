@@ -874,10 +874,6 @@ function App() {
 
             <div className="why-visual-frame">
 
-              <div className="why-visual-badge">
-                Macquarie Park Bus Depot
-              </div>
-
               <div className="why-visual">
                 <img
                   src={apexInterchange}
@@ -1432,24 +1428,20 @@ function App() {
 
               <nav className="footer-links">
 
-                <a href="/">
-                  Home
-                </a>
-
-                <a href="/about">
-                  About
+                <a href="/services">
+                  Traffic Staging Plans
                 </a>
 
                 <a href="/services">
-                  Services
+                  Traffic Modelling
                 </a>
 
-                <a href="/projects">
-                  Projects
+                <a href="/services">
+                  Traffic Impact Statments
                 </a>
 
-                <a href="/contact">
-                  Contact
+                <a href="/services">
+                  Traffic Guidance Schemes
                 </a>
 
               </nav>

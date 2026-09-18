@@ -824,21 +824,20 @@ function Projects() {
         </h3>
 
         <div className="footer-links">
-
           <a href="/services">
-            Traffic Management Plans
+            Traffic Staging Plans
           </a>
 
           <a href="/services">
-            Traffic Control Plans
+            Traffic Modelling
           </a>
 
           <a href="/services">
-            Road Safety Audits
+            Traffic Impact Statments
           </a>
 
           <a href="/services">
-            Traffic Impact Assessments
+            Traffic Guidance Schemes
           </a>
 
         </div>

@@ -5,7 +5,7 @@ import apexNavLogo from "./assets/apex-nav-logo.png";
 import aboutHero from "./assets/4_golden_hwy_meriwa.png";
 import apexInterchange from "./assets/staging.png";
 import missionRoad from "./assets/Bill.png";
-import constructionVisual from "./assets/world.png";
+import constructionVisual from "./assets/Project.png";
 
 
 function About() {
@@ -270,10 +270,10 @@ function About() {
           </span>
 
           <div></div>
-
+{/* 
           <span>
-            TRAFFIC ENGINEERING · SYDNEY NSW
-          </span>
+           Apex Road Network
+          </span> */}
 
         </div>
 
@@ -876,19 +876,19 @@ function About() {
               <div className="about-footer-links">
 
                 <a href="/services">
-                  Traffic Management Plans
+                  Traffic Staging Plans
                 </a>
 
                 <a href="/services">
-                  Traffic Control Plans
+                  Traffic Modelling
                 </a>
 
                 <a href="/services">
-                  Road Safety Audits
+                  Traffic Impact Statments
                 </a>
 
                 <a href="/services">
-                  Traffic Impact Assessments
+                  Traffic Guidance Schemes
                 </a>
 
               </div>

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./Services.css";
 
-import apexInterchange from "./assets/round.png";
+import apexInterchange from "./assets/use.png";
 import apexNavLogo from "./assets/apex-nav-logo.png";
 
 
@@ -1110,19 +1110,19 @@ function Services() {
         <div className="footer-links">
 
           <a href="/services">
-            Traffic Management Plans
+            Traffic Staging Plans
           </a>
 
           <a href="/services">
-            Traffic Control Plans
+            Traffic Modelling
           </a>
 
           <a href="/services">
-            Road Safety Audits
+            Traffic Impact Statments
           </a>
 
           <a href="/services">
-            Traffic Impact Assessments
+            Traffic Guidance Schemes
           </a>
 
         </div>
