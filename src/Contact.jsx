@@ -184,81 +184,94 @@ function Contact() {
 
 
       {/* CONTACT */}
-      <section className="contact-hero">
+     <section className="contact-hero">
 
-        <div className="contact-grid"></div>
-        <div className="contact-glow"></div>
+  <div className="contact-inner">
 
-        <div className="contact-inner">
+    {/* LEFT */}
+    <div className="contact-heading contact-reveal">
 
-          {/* LEFT */}
-          <div className="contact-heading contact-reveal">
+      <div className="contact-eyebrow">
+        <span></span>
+        Contact
+      </div>
 
-            <div className="contact-eyebrow">
-              <span></span>
-              Get In Touch
-            </div>
+      <h1>
+        CONTACT APEX
+        <br />
+        <span>ROAD NETWORK.</span>
+      </h1>
 
-            <h1>
-              LET'S
-              <br />
-              <span>CONNECT.</span>
-            </h1>
+      <p className="contact-intro">
+        Need traffic engineering support for an upcoming project?
+        Speak directly with our team about your project requirements,
+        documentation or traffic management needs.
+      </p>
 
-            <p>
-              Have a project in mind or need traffic engineering support?
-              Get in touch with the APEX Road Network team.
-            </p>
+      {/* <div className="contact-service-area">
+        <span>Based in Sydney</span>
+        <span>NSW & ACT Projects</span>
+      </div> */}
 
-          </div>
-
-
-          {/* RIGHT */}
-          <div className="contact-details contact-reveal">
-
-            <a
-              href="tel:+61000000000"
-              className="contact-item"
-            >
-              <div className="contact-item-number">01</div>
-
-              <div className="contact-item-content">
-                <span>Phone</span>
-                <h2>0499 516 282</h2>
-              </div>
-
-              <div className="contact-arrow"><span className="text-arrow">↗︎</span></div>
-            </a>
+    </div>
 
 
-            <a
-              href="mailto:hello@apexroadnetwork.com.au"
-              className="contact-item"
-            >
-              <div className="contact-item-number">02</div>
+    {/* RIGHT */}
+    <div className="contact-panel contact-reveal">
 
-              <div className="contact-item-content">
-                <span>Email</span>
-                <h2>info@apexroadnetwork.com.au</h2>
-              </div>
+      <div className="contact-panel-heading">
+        <span>Project enquiries</span>
+        <h2>Speak with our team</h2>
+        <p>
+          For project enquiries, quotes or general information,
+          contact APEX Road Network directly.
+        </p>
+      </div>
 
-              <div className="contact-arrow"><span className="text-arrow">↗︎</span></div>
-            </a>
 
-          </div>
-
+      <a
+        href="tel:+61499516282"
+        className="contact-method"
+      >
+        <div className="contact-method-label">
+          Phone
         </div>
 
-
-        <div className="contact-footer contact-reveal">
-          <span>APEX ROAD NETWORK</span>
-
-          <div></div>
-
-          <span>NSW · ACT</span>
+        <div className="contact-method-value">
+          0499 516 282
         </div>
 
-      </section>
+        <span className="contact-method-arrow">
+          ↗
+        </span>
+      </a>
+
+
+      <a
+        href="mailto:info@apexroadnetwork.com.au"
+        className="contact-method"
+      >
+        <div className="contact-method-label">
+          Email
+        </div>
+
+        <div className="contact-method-value contact-email">
+          info@apexroadnetwork.com.au
+        </div>
+
+        <span className="contact-method-arrow">
+          ↗
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+        
 {/* =====================================================
     FOOTER — SAME AS THE OTHER PAGES
 ===================================================== */}
